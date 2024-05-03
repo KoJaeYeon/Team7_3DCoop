@@ -14,14 +14,17 @@ public class PoolManager : Singleton<PoolManager>
     #region 누군가의 작업공간(지혜)
 
     #endregion
-
     #region 누군가의 작업공간(준형)
 
     #endregion
-
-    #region 누군가의 작업공간(성민)
+    #region 누군가의 작업공간(민성)
 
     #endregion
+
+    private void Awake()
+    {
+        bulletPools.Clear();
+    }
 
     public GameObject GetEnemy()
     {
