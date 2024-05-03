@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class Enemy : MonoBehaviour ,IHitAble
     public float TargetDistance;
 
     //오리지널 플레이어 1명의 위치
-    public Transform PlayerTransform;
+    public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
 
@@ -30,12 +31,19 @@ public class Enemy : MonoBehaviour ,IHitAble
     {
         if(Vector3.Distance(PlayerTransform.position,transform.position) < TargetDistance)
         {
-            Vector3 targetPos = PlayerTransform.position - transform.position;
+            Vector3 targetPos = (PlayerTransform.position - transform.position).normalized;
+
+            float targetAngle = Mathf.Atan2(targetPos.x, targetPos.z) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+
             MovePos = targetPos;
         }
-            
+
         EnemyMove();
+     
     }
+
 
     private void EnemyMove()
     {
@@ -48,7 +56,7 @@ public class Enemy : MonoBehaviour ,IHitAble
         EnemyRigidbody.AddForce(EnemyMove);
     }
 
-  
+
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if(collision.gameObject.tag == "Bullet")
