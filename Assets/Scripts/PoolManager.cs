@@ -6,7 +6,8 @@ public class PoolManager : Singleton<PoolManager>
 {
     #region 재연작업공간
     List<GameObject> bulletPools = new List<GameObject>();
-    List<GameObject> EnemyPools = new List<GameObject>();
+    List<GameObject> enemyPools = new List<GameObject>();
+    List<GameObject> itemBoxPools = new List<GameObject>();
 
     #endregion
 
