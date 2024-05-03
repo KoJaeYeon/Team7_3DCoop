@@ -5,10 +5,8 @@ using UnityEngine.Rendering;
 
 public class GameManager : Singleton<GameManager>
 {
-
-    private int Time;
-    private int A;
-
+    private float timer = 0f;
+    public static int score;
     private void Awake()
     {
     }
@@ -19,6 +17,14 @@ public class GameManager : Singleton<GameManager>
 
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+
+        if(timer > 60.0f)
+        {
+            timer = 0f;
+        }
     }
+
+    
 }
