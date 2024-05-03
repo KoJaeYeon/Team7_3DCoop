@@ -1,21 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour ,IHitAble
+public class Enemy : MonoBehaviour, IHitAble
 {
     public float EnemyHp;
     public float EnemySpeed;
     public float EnemyMaxSpeed;
     public float TargetDistance;
+    public int EnemyAtk;
+
+    private bool isMove = true;
+    private bool OnAttack = true;
 
     //오리지널 플레이어 1명의 위치
-    public Transform PlayerTransform;
+    public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
+    private CapsuleCollider EnemyCollider;
 
-    private Vector3 MovePos = Vector3.forward;
-    private bool isGround = false;
+
+    private Vector3 MovePos;
+    private Vector3 TargetPos;
 
 
 
@@ -23,52 +31,96 @@ public class Enemy : MonoBehaviour ,IHitAble
     {
         EnemyRigidbody = GetComponent<Rigidbody>();
         EnemyAnimator = GetComponent<Animator>();
+        EnemyCollider = GetComponent<CapsuleCollider>();
+
+        MovePos = transform.forward;
+        EnemyAnimator.SetFloat("Run", 1f);
+
+        
     }
 
 
     private void FixedUpdate()
     {
-        if(Vector3.Distance(PlayerTransform.position,transform.position) < TargetDistance)
-        {
-            Vector3 targetPos = PlayerTransform.position - transform.position;
-            MovePos = targetPos;
-            
-        }
-            
+        Target();
         EnemyMove();
     }
 
+
     private void EnemyMove()
     {
-        float CurrentSpeed = EnemyRigidbody.velocity.magnitude;
+        if (isMove)
+        {
+            float CurrentSpeed = EnemyRigidbody.velocity.magnitude;
 
-        if (CurrentSpeed > EnemyMaxSpeed)
-            EnemyRigidbody.velocity = EnemyRigidbody.velocity.normalized * EnemyMaxSpeed;
+            if (CurrentSpeed > EnemyMaxSpeed)
+                EnemyRigidbody.velocity = EnemyRigidbody.velocity.normalized * EnemyMaxSpeed;
 
-        Vector3 EnemyMove = MovePos * EnemySpeed;
-        EnemyRigidbody.AddForce(EnemyMove);
+            Vector3 EnemyMove = MovePos * EnemySpeed;
+            EnemyRigidbody.AddForce(EnemyMove);
+        }
+    }
+
+    private void Target()
+    {
+        if (PlayerTransform == null)
+            return;
+
+        if (Vector3.Distance(PlayerTransform.position, transform.position) < TargetDistance)
+        {
+            TargetPos = (PlayerTransform.position - transform.position).normalized;
+
+            float targetAngle = Mathf.Atan2(TargetPos.x, TargetPos.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+
+            MovePos = TargetPos;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Ground"))
-            isGround = true;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            EnemyAnimator.SetFloat("Run", 0);
+            EnemyAnimator.SetBool("Attack", true);
+        } 
+       
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            EnemyAnimator.SetFloat("Run", 1f);
+            EnemyAnimator.SetBool("Attack", false);
+        }
     }
 
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if(collision.gameObject.tag == "Bullet")
-    //    {
-    //        Damaged();
-    //    }
-    //}
 
     public void Damaged(float damage)
     {
-        
+        EnemyHp -= damage;
 
-
+        if (EnemyHp <= 0)
+        {
+            isMove = false;
+            StartCoroutine(Dead());
+        }
     }
+
+
+    private IEnumerator Dead()
+    {
+        EnemyAnimator.SetTrigger("Die");
+        
+        EnemyRigidbody.velocity = Vector3.zero;
+        EnemyRigidbody.useGravity = false;
+        EnemyCollider.enabled = false;
+
+        yield return new WaitForSeconds(1.5f);
+
+        gameObject.SetActive(false);
+    }
+
+    
 
 }

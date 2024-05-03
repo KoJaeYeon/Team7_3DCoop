@@ -8,6 +8,7 @@ public class Revolver : Weapon,IWeapon
     {
         rapidSpeed = 1f;
         bulletSpeed = 1f;
+        attackDamage = 1f;
     }
     private void Update()
     {
