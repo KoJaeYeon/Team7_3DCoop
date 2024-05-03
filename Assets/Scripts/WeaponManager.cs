@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponManager : MonoBehaviour
+public class WeaponManager : Singleton<WeaponManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    public MyWeapon[] playerWeapons;
+    public WeaponType weaponType;
+
+    private void Awake()
     {
-        
+        //플레이어에게서 weapon 가져오기 또는 할당
+        weaponType = WeaponType.Revolver;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetWeapon(WeaponType weaponType)
     {
-        
+        this.weaponType = weaponType;
+        for(int i = 0; i < playerWeapons.Length; i++)
+        {
+            playerWeapons[i].SetWeapon(weaponType);
+        }
     }
 }
