@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour ,IHitAble
     private Animator EnemyAnimator;
 
     private Vector3 MovePos = Vector3.forward;
-    private bool isGround = false;
+    
 
 
 
@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour ,IHitAble
         {
             Vector3 targetPos = PlayerTransform.position - transform.position;
             MovePos = targetPos;
-            
         }
             
         EnemyMove();
@@ -49,13 +48,7 @@ public class Enemy : MonoBehaviour ,IHitAble
         EnemyRigidbody.AddForce(EnemyMove);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Ground"))
-            isGround = true;
-    }
-
-
+  
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if(collision.gameObject.tag == "Bullet")
