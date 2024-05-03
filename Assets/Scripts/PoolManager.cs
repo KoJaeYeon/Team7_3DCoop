@@ -24,6 +24,7 @@ public class PoolManager : Singleton<PoolManager>
     private void Awake()
     {
         bulletPools.Clear();
+        enemyPools.Clear();
     }
 
     public GameObject GetEnemy()
