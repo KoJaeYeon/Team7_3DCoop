@@ -5,6 +5,12 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     float attackDamage;
+
+    public void Damaged(float damage)
+    {
+        throw new System.NotImplementedException();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
