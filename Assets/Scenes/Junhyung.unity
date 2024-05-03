@@ -176,6 +176,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &20182426
 CapsuleCollider:
@@ -691,6 +692,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &245014945
 CapsuleCollider:
@@ -1252,6 +1254,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_GhillieSuit_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1262,7 +1268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06509495
+      value: 0.273
       objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1400,6 +1406,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904351578}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &905867447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+  m_PrefabInstance: {fileID: 822184507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &905867449
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905867447}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.91, z: 0}
 --- !u!1 &928366949
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main: {fileID: 0}
 --- !u!114 &928366952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1599,6 +1629,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &1091255935
 CapsuleCollider:
@@ -1830,6 +1861,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &1182248942
 CapsuleCollider:
@@ -2233,7 +2265,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375780072}
-  m_LocalRotation: {x: 0.020908805, y: 0.8974179, z: -0.43860435, w: 0.042781003}
+  m_LocalRotation: {x: 0.020649599, y: 0.900055, z: -0.433167, w: 0.04290672}
   m_LocalPosition: {x: 0.08348678, y: 8.523288, z: 14.929674}
   m_LocalScale: {x: 1.0000004, y: 1, z: 1.0000002}
   m_ConstrainProportionsScale: 0
@@ -2353,7 +2385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385970966}
-  m_LocalRotation: {x: 0.020908805, y: 0.8974179, z: -0.43860435, w: 0.042781003}
+  m_LocalRotation: {x: 0.020649599, y: 0.900055, z: -0.433167, w: 0.04290672}
   m_LocalPosition: {x: 0.08348678, y: 8.523288, z: 14.929674}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2792,6 +2824,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &1604490991
 CapsuleCollider:
@@ -3265,6 +3298,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &2082225769
 CapsuleCollider:
@@ -3415,6 +3449,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &2098847917
 CapsuleCollider:
@@ -3549,6 +3584,7 @@ MonoBehaviour:
   EnemySpeed: 10
   EnemyMaxSpeed: 7
   TargetDistance: 20
+  EnemyAtk: 0
   PlayerTransform: {fileID: 822184508}
 --- !u!136 &2130942661
 CapsuleCollider:
