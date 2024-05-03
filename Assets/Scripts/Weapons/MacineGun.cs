@@ -8,6 +8,7 @@ public class MacineGun : Weapon,IWeapon
     {
         rapidSpeed = 0.5f;
         bulletSpeed = 2f;
+        attackDamage = 2f;
     }
 
     private void Update()

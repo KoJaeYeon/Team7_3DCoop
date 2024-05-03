@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 279994897382478855}
   - component: {fileID: 240850407725766939}
   - component: {fileID: -1322499801542302771}
+  - component: {fileID: 5734417663025033240}
   m_Layer: 0
-  m_Name: SM_Wep_Grenade_Ammo_01
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,3 +116,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5734417663025033240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267951872030450593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae067cd89400c44f9d19818257a5911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletSpeed: 10

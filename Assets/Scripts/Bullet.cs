@@ -4,15 +4,55 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float BulletSpeed = 10.0f;
-    void Start()
+    private float attackDamage = 1f;
+    private int piercing = 1;
+    private float radius = 0f;
+    private bool explodeActive = false;
+
+
+    public void InitBullet()
     {
-        
+        attackDamage = 1f;
+        piercing = 1;
+        radius = 0f;
+        explodeActive = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetBullet(float attackDamage, int piercing, float radus, bool explodeActive)
     {
-        
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        IHitAble hitAble = collision.gameObject.GetComponent<IHitAble>();
+        if (hitAble != null)
+        {
+            if (!explodeActive) // 일반형
+            {
+                hitAble.Damaged(attackDamage);
+                piercing--;
+                if (piercing == 0)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else // 폭발형
+            {
+                Collider[] bombColliders = Physics.OverlapSphere(collision.transform.position, radius, 6);
+
+                for(int i = 0; i < bombColliders.Length; i++)
+                {
+                    hitAble = bombColliders[i].GetComponent<IHitAble>();
+                    hitAble.Damaged(attackDamage);
+                }
+                piercing--;
+                if(piercing == 0)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+
+        }
     }
 }
