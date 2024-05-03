@@ -4,16 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
-public class SceneManager : Singleton<SceneManager>
+public class SeneLoadManager : Singleton<SeneLoadManager>
 {
 
-    public void Buttonstart()
-    { 
-    
-       
-    
-    }
+  
 
 
 }
