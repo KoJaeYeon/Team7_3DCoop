@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,13 +16,16 @@ public class GameManager : Singleton<GameManager>
     {
         InitGame();
     }
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Timer());
     }
 
+<<<<<<< HEAD
     IEnumerator Timer()
+=======
+    void Update()
+>>>>>>> main
     {
         while(true)
         {
