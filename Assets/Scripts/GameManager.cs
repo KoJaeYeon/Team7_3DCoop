@@ -21,11 +21,8 @@ public class GameManager : Singleton<GameManager>
         StartCoroutine(Timer());
     }
 
-<<<<<<< HEAD
     IEnumerator Timer()
-=======
-    void Update()
->>>>>>> main
+
     {
         while(true)
         {
