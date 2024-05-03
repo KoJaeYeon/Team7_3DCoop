@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolver : Weapon,IWeapon
+public class RocketLauncer : Weapon,IWeapon
 {
     private void Awake()
     {
-        rapidSpeed = 1f;
-        bulletSpeed = 1f;
-        attackDamage = 1f;
+        rapidSpeed = 0.2f;
+        bulletSpeed = 2.5f;
+        attackDamage = 20f;
+        radius = 2.5f;
+        explodeActive = true;
     }
+
     private void Update()
     {
         time += Time.deltaTime;

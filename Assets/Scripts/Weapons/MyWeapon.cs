@@ -6,11 +6,11 @@ using UnityEngine;
 public enum WeaponType 
 { 
     Revolver,
-    MachineGun
+    MachineGun,
+    RocketLauncer
 }
 public class MyWeapon : MonoBehaviour
 {
-    [SerializeField]
     private IWeapon weapon;
     public WeaponType myWeapon;
 
@@ -42,6 +42,9 @@ public class MyWeapon : MonoBehaviour
                 break;
             case WeaponType.MachineGun:
                 weapon = gameObject.AddComponent<MacineGun>();
+                break;
+            case WeaponType.RocketLauncer:
+                weapon = gameObject.AddComponent<RocketLauncer>();
                 break;
         }
     }
