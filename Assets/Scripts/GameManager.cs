@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-
+    private float timer = 0f;
+    public static int score;
     private void Awake()
     {
     }
@@ -17,6 +18,14 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        Debug.Log(timer);
+
+        if(timer > 60.0f)
+        {
+            timer = 0f;
+        }
     }
+
+    
 }
