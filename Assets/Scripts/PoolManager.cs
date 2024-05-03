@@ -85,7 +85,4 @@ public class PoolManager : Singleton<PoolManager>
         itemBoxPools.Add(prefab);
         return prefab;
     }
-
-
-
 }
