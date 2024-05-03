@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Junhyung.unity.meta
 guid: 29eca091980784f4fa159e8ab0f5f584
+========
+guid: 42f1b26687cf3f04282f3d592773c3d6
+>>>>>>>> main:Assets/Scenes/UI.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
