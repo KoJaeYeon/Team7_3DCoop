@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -9,13 +10,11 @@ public class GameManager : Singleton<GameManager>
     private void Awake()
     {
     }
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
