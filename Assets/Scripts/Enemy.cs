@@ -15,12 +15,11 @@ public class Enemy : MonoBehaviour, IHitAble
     private bool isMove = true;
     private bool OnAttack = true;
 
-    //¿À¸®Áö³Î ÇÃ·¹ÀÌ¾î 1¸íÀÇ À§Ä¡
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
     public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
     private CapsuleCollider EnemyCollider;
-
 
     private Vector3 MovePos;
     private Vector3 TargetPos;
@@ -81,11 +80,13 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
             EnemyAnimator.SetFloat("Run", 0);
             EnemyAnimator.SetBool("Attack", true);
         } 
        
     }
+
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -94,7 +95,6 @@ public class Enemy : MonoBehaviour, IHitAble
             EnemyAnimator.SetBool("Attack", false);
         }
     }
-
 
     public void Damaged(float damage)
     {
