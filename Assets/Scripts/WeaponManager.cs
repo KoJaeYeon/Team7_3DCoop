@@ -20,13 +20,13 @@ public class WeaponManager : Singleton<WeaponManager>
         weaponType = WeaponType.Revolver;
 
         //무기 설정 (공격속도, 총알속도, 공격력, 관통숫자, 폭발반지름, 폭발가능)
-        weaponDataDic.Add(WeaponType.Revolver, new WeaponData(1f, 10f, 1f, 1, 0, false));
-        weaponDataDic.Add(WeaponType.MachineGun, new WeaponData(0.3f, 15f, 2f, 1, 0, false));
-        weaponDataDic.Add(WeaponType.RocketLauncer, new WeaponData(3f, 5f, 20f, 1, 2.5f, true));
-        weaponDataDic.Add(WeaponType.SMG, new WeaponData(1f, 15f, 1f, 1, 0, false));
-        weaponDataDic.Add(WeaponType.Rifle, new WeaponData(1f, 100f, 1f, 50, 0, false));
-        weaponDataDic.Add(WeaponType.Bow, new WeaponData(1f, 10f, 1f, 2, 0, false));
-        weaponDataDic.Add(WeaponType.ThorwingStars, new WeaponData(1f, 10f, 1f, 3, 0, false));
+        weaponDataDic.Add(WeaponType.Revolver, new WeaponData(0.3f, 10f, 1f, 1, 0, false));
+        weaponDataDic.Add(WeaponType.MachineGun, new WeaponData(0.05f, 30f, 2f, 1, 0, false));
+        weaponDataDic.Add(WeaponType.RocketLauncer, new WeaponData(3f, 5f, 40f, 1, 2.5f, true));
+        weaponDataDic.Add(WeaponType.SMG, new WeaponData(0.2f, 15f, 1f, 1, 0, false));
+        weaponDataDic.Add(WeaponType.Rifle, new WeaponData(2f, 100f, 100f, 50, 0, false));
+        weaponDataDic.Add(WeaponType.Bow, new WeaponData(1f, 10f, 30f, 2, 0, false));
+        weaponDataDic.Add(WeaponType.ThorwingStars, new WeaponData(0.7f, 10f, 1f, 3, 0, false));
 
         weaponDamage = 1;
         powerUpInt = 0;

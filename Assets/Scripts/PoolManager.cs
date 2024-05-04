@@ -5,17 +5,19 @@ using UnityEngine;
 public class PoolManager : Singleton<PoolManager>
 {
     #region 재연작업공간
-    public GameObject bulletPrefab;
+    [Header("0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star")]
+    public GameObject[] bulletPrefab; //0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star
     public GameObject enemyPrefab;
     public GameObject itemBoxPrefab;
 
-    public Transform bulletTrans;
+    [Header("0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star")]
+    public Transform[] bulletTrans; //0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star
     public Transform enemyTrans;
     public Transform itemBoxTrans;
 
     private int itemBoxCount = 30;
 
-    Queue<GameObject> bulletPools = new Queue<GameObject>();
+    Queue<GameObject>[] bulletPools;
     Queue<GameObject> enemyPools = new Queue<GameObject>();
     List<GameObject> itemBoxPools = new List<GameObject>();
 
@@ -33,20 +35,54 @@ public class PoolManager : Singleton<PoolManager>
 
     private void Awake()
     {
-        for(int i = 0; i < 500; i++)
+        bulletPools = new Queue<GameObject>[bulletPrefab.Length];
+        for(int i = 0; i < bulletPrefab.Length; i++)
         {
-            GameObject prefab = Instantiate(bulletPrefab, bulletTrans);
-            prefab.SetActive(false);
-            bulletPools.Enqueue(prefab);
+            bulletPools[i] = new Queue<GameObject>();
         }
-        for (int i = 0; i < 300; i++)
+
+        for(int i = 0; i < 500; i++)//Bullet
+        {
+            GameObject prefab = Instantiate(bulletPrefab[0], bulletTrans[0]);
+            prefab.SetActive(false);
+            bulletPools[0].Enqueue(prefab);
+        }
+
+        for (int i = 0; i < 50; i++) //Rocket
+        {
+            GameObject prefab = Instantiate(bulletPrefab[1], bulletTrans[1]);
+            prefab.SetActive(false);
+            bulletPools[1].Enqueue(prefab);
+        }
+
+        for (int i = 0; i < 50; i++) //Rifle
+        {
+            GameObject prefab = Instantiate(bulletPrefab[2], bulletTrans[2]);
+            prefab.SetActive(false);
+            bulletPools[2].Enqueue(prefab);
+        }
+
+        for (int i = 0; i < 100; i++) //Arrow
+        {
+            GameObject prefab = Instantiate(bulletPrefab[3], bulletTrans[3]);
+            prefab.SetActive(false);
+            bulletPools[3].Enqueue(prefab);
+        }
+
+        for (int i = 0; i < 300; i++) //Star
+        {
+            GameObject prefab = Instantiate(bulletPrefab[4], bulletTrans[4]);
+            prefab.SetActive(false);
+            bulletPools[4].Enqueue(prefab);
+        }
+        for (int i = 0; i < 300; i++) //Enemy
         {
             GameObject prefab = Instantiate(enemyPrefab, enemyTrans);
             prefab.SetActive(false);
             enemyPools.Enqueue(prefab);
         }
 
-        for (int i = 0; i < itemBoxCount; i++)
+        for (int i = 0; i < itemBoxCount; i++) //ItemBox
         {
             GameObject prefab = Instantiate(itemBoxPrefab, itemBoxTrans);
             prefab.SetActive(false);
@@ -55,10 +91,38 @@ public class PoolManager : Singleton<PoolManager>
     }
     public GameObject GetBullet()
     {
-        GameObject bullet = bulletPools.Dequeue();
-        bulletPools.Enqueue(bullet);
+        GameObject bullet = bulletPools[0].Dequeue();
+        bulletPools[0].Enqueue(bullet);
         bullet.SetActive(true);
         return bullet;
+    }
+    public GameObject GetRocket()
+    {
+        GameObject rocket = bulletPools[1].Dequeue();
+        bulletPools[1].Enqueue(rocket);
+        rocket.SetActive(true);
+        return rocket;
+    }
+    public GameObject GetRifle()
+    {
+        GameObject rifle = bulletPools[1].Dequeue();
+        bulletPools[2].Enqueue(rifle);
+        rifle.SetActive(true);
+        return rifle;
+    }
+    public GameObject GetArrow()
+    {
+        GameObject arrow = bulletPools[2].Dequeue();
+        bulletPools[3].Enqueue(arrow);
+        arrow.SetActive(true);
+        return arrow;
+    }
+    public GameObject GetStar()
+    {
+        GameObject star = bulletPools[3].Dequeue();
+        bulletPools[4].Enqueue(star);
+        star.SetActive(true);
+        return star;
     }
     public GameObject GetEnemy()
     {

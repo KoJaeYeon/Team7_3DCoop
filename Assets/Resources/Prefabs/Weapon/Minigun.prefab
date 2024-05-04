@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 64615748728105830}
   - component: {fileID: -639453790615900868}
   m_Layer: 0
-  m_Name: SM_Wep_Minigun_01
+  m_Name: Minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
