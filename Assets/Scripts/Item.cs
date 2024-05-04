@@ -19,8 +19,10 @@ public class Item : MonoBehaviour,IHitAble
     private void OnEnable()
     {
         isMove = true;
+
         BoxHp = (int)Random.Range(1, 10);
         BoxHpText.text = BoxHp.ToString();
+        StartCoroutine(ReturnTimer());
         
     }
 
@@ -62,16 +64,12 @@ public class Item : MonoBehaviour,IHitAble
         gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public IEnumerator ReturnTimer()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //�÷��̾�� ���ظ� ������.
-            Instantiate(BoxParticle, transform.position, Quaternion.identity);
-            ReturnBox();
-        }
-
+        yield return new WaitForSeconds(20.0f);
+        ReturnBox();
     }
+
 
     public WeaponType DropWeapon()
     {
@@ -103,5 +101,15 @@ public class Item : MonoBehaviour,IHitAble
         }
 
         return weaponType;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //�÷��̾�� ���ظ� ������.
+            Instantiate(BoxParticle, transform.position, Quaternion.identity);
+            ReturnBox();
+        }
+
     }
 }
