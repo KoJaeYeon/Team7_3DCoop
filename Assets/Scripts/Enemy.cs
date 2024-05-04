@@ -108,12 +108,15 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private IEnumerator Attack()
     {
+        EnemyAnimator.SetBool("Attack", true);
+
         while (OnAttack)
         {
-            EnemyAnimator.SetBool("Attack", true);
+            Debug.Log("공격중");
+            
             yield return new WaitForSeconds(1.0f);
         }
-
+        Debug.Log("공격종료");
         EnemyAnimator.SetBool("Attack", false);
     }
 
