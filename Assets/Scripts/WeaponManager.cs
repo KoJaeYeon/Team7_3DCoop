@@ -42,6 +42,7 @@ public class WeaponManager : Singleton<WeaponManager>
     public void SetWeapon(WeaponType weaponType)
     {
         this.weaponType = weaponType;
+        
         for(int i = 0; i < playerWeapons.Length; i++)
         {
             playerWeapons[i].SetWeapon(weaponType);

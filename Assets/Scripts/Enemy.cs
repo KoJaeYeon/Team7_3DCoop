@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour, IHitAble
     public int EnemyAtk;
 
     private bool isMove = true;
-    private bool OnAttack = true;
 
     public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
@@ -23,7 +22,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private Vector3 MovePos;
     private Vector3 TargetPos;
 
-
+    
 
     private void Awake()
     {
@@ -33,6 +32,11 @@ public class Enemy : MonoBehaviour, IHitAble
 
         MovePos = transform.forward;
         EnemyAnimator.SetFloat("Run", 1f);
+    }
+
+    private void OnEnable()
+    {
+        isMove = true;
     }
 
 
@@ -78,6 +82,7 @@ public class Enemy : MonoBehaviour, IHitAble
         if (collision.gameObject.CompareTag("Player"))
         {
             EnemyAnimator.SetBool("Attack", true);
+            EnemyAnimator.SetFloat("Run", 0f);
         } 
        
     }
@@ -112,9 +117,13 @@ public class Enemy : MonoBehaviour, IHitAble
 
         yield return new WaitForSeconds(1.5f);
 
-        gameObject.SetActive(false);
+        ReturnEnemy();
     }
 
+    public void ReturnEnemy()
+    {
+        gameObject.SetActive(false);
+    }
   
 
 }
