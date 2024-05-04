@@ -6,7 +6,7 @@ public class RocketLauncer : Weapon,IWeapon
 {
     private void Start()
     {
-        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.RocketLauncer);
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.RocketLauncher);
     }
     public override void Fire()
     {

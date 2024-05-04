@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     public void SetBullet(float attackDamage, int piercing, float radus, bool explodeActive)
     {
-        this.attackDamage = attackDamage;
+        this.attackDamage = attackDamage * WeaponManager.Instance.damageMultiplier;
         this.piercing = piercing;
         this.radius = radus;
         this.explodeActive = explodeActive;
