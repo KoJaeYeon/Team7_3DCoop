@@ -20,7 +20,10 @@ public class Bullet : MonoBehaviour
 
     public void SetBullet(float attackDamage, int piercing, float radus, bool explodeActive)
     {
-
+        this.attackDamage = attackDamage;
+        this.piercing = piercing;
+        this.radius = radus;
+        this.explodeActive = explodeActive;
     }
 
     private void OnCollisionEnter(Collision collision)
