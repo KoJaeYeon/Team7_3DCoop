@@ -2151,6 +2151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWeapons: []
   weaponType: 0
+  weaponDamage: 1
+  powerUpInt: 0
 --- !u!1 &1093428466
 GameObject:
   m_ObjectHideFlags: 0
