@@ -8,11 +8,6 @@ public class ThrowingStar : Weapon,IWeapon
     {
         weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.ThorwingStars);
     }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-    }
     public override void Fire()
     {
         base.Fire();

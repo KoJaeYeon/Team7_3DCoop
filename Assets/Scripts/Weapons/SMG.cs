@@ -8,11 +8,6 @@ public class SMG : Weapon,IWeapon
     {
         weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.SMG);
     }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-    }
     public override void Fire()
     {
         base.Fire();

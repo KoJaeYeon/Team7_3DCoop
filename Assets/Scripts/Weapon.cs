@@ -13,6 +13,11 @@ public abstract class Weapon : MonoBehaviour, IWeapon
         time = 0;
     }
 
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
     public virtual void Fire()
     {
         if (time > weaponData.rapidSpeed)

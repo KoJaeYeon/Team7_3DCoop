@@ -8,11 +8,6 @@ public class Bow : Weapon,IWeapon
     {
         weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.Bow);
     }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-    }
     public override void Fire()
     {
         base.Fire();

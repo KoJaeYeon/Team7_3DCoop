@@ -7,6 +7,10 @@ public class WeaponManager : Singleton<WeaponManager>
     public MyWeapon[] playerWeapons;
     public WeaponType weaponType;
 
+    private float weaponDamage = 1f;
+    public int powerUpInt = 0;
+
+
     Dictionary<WeaponType, WeaponData> weaponDataDic;
 
     private void Awake()
@@ -23,6 +27,16 @@ public class WeaponManager : Singleton<WeaponManager>
         weaponDataDic.Add(WeaponType.Rifle, new WeaponData(1f, 100f, 1f, 50, 0, false));
         weaponDataDic.Add(WeaponType.Bow, new WeaponData(1f, 10f, 1f, 2, 0, false));
         weaponDataDic.Add(WeaponType.ThorwingStars, new WeaponData(1f, 10f, 1f, 3, 0, false));
+
+        weaponDamage = 1;
+        powerUpInt = 0;
+    }
+
+    public void PowerUP()
+    {
+        Debug.Log("PowerUp");
+        weaponDamage += 0.1f;
+        powerUpInt++;
     }
 
     public void SetWeapon(WeaponType weaponType)
