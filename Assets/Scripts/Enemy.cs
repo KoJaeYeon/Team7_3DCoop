@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour ,IHitAble
+public class Enemy : MonoBehaviour, IHitAble
 {
     public float EnemyHp;
     public float EnemySpeed;
@@ -12,14 +12,16 @@ public class Enemy : MonoBehaviour ,IHitAble
     public float TargetDistance;
     public int EnemyAtk;
 
+    private bool isMove = true;
     private bool OnAttack = true;
 
-    //¿À¸®Áö³Î ÇÃ·¹ÀÌ¾î 1¸íÀÇ À§Ä¡
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
     public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
+    private CapsuleCollider EnemyCollider;
 
-    private Vector3 MovePos = Vector3.forward;
+    private Vector3 MovePos;
     private Vector3 TargetPos;
 
 
@@ -28,77 +30,97 @@ public class Enemy : MonoBehaviour ,IHitAble
     {
         EnemyRigidbody = GetComponent<Rigidbody>();
         EnemyAnimator = GetComponent<Animator>();
+        EnemyCollider = GetComponent<CapsuleCollider>();
+
+        MovePos = transform.forward;
+        EnemyAnimator.SetFloat("Run", 1f);
+
+        
     }
 
 
     private void FixedUpdate()
     {
-        if(Vector3.Distance(PlayerTransform.position,transform.position) < TargetDistance)
-        {
-            TargetPos = (PlayerTransform.position - transform.position).normalized;
-
-            MovePos = TargetPos;
-
-            float targetAngle = Mathf.Atan2(TargetPos.x, TargetPos.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-        }
-
-
+        Target();
         EnemyMove();
     }
 
 
     private void EnemyMove()
     {
-        float CurrentSpeed = EnemyRigidbody.velocity.magnitude;
+        if (isMove)
+        {
+            float CurrentSpeed = EnemyRigidbody.velocity.magnitude;
 
-        if (CurrentSpeed > EnemyMaxSpeed)
-            EnemyRigidbody.velocity = EnemyRigidbody.velocity.normalized * EnemyMaxSpeed;
+            if (CurrentSpeed > EnemyMaxSpeed)
+                EnemyRigidbody.velocity = EnemyRigidbody.velocity.normalized * EnemyMaxSpeed;
 
-        Vector3 EnemyMove = MovePos * EnemySpeed;
-        EnemyRigidbody.AddForce(EnemyMove);
+            Vector3 EnemyMove = MovePos * EnemySpeed;
+            EnemyRigidbody.AddForce(EnemyMove);
+        }
+    }
+
+    private void Target()
+    {
+        if (PlayerTransform == null)
+            return;
+
+        if (Vector3.Distance(PlayerTransform.position, transform.position) < TargetDistance)
+        {
+            TargetPos = (PlayerTransform.position - transform.position).normalized;
+
+            float targetAngle = Mathf.Atan2(TargetPos.x, TargetPos.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+
+            MovePos = TargetPos;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(Attack());
-            OnAttack = true;
-        }
+
+            EnemyAnimator.SetFloat("Run", 0);
+            EnemyAnimator.SetBool("Attack", true);
+        } 
+       
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnAttack = false;
+            EnemyAnimator.SetFloat("Run", 1f);
+            EnemyAnimator.SetBool("Attack", false);
         }
     }
-
-    private IEnumerator Attack()
-    {
-        while (OnAttack)
-        {
-            // °ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç ½ÇÇà
-            //°ø°Ý
-            Debug.Log("°ø°Ý ½ÇÇà");
-            yield return new WaitForSeconds(2.0f);
-            //°ø°Ý ¾Ö´Ï¸ÞÀÌ¼Ç Áß´Ü
-
-        }
-        Debug.Log("°ø°Ý Áß´Ü");
-        
-    }
-
-
-
 
     public void Damaged(float damage)
     {
-        
+        EnemyHp -= damage;
 
-
+        if (EnemyHp <= 0)
+        {
+            isMove = false;
+            StartCoroutine(Dead());
+        }
     }
+
+
+    private IEnumerator Dead()
+    {
+        EnemyAnimator.SetTrigger("Die");
+        
+        EnemyRigidbody.velocity = Vector3.zero;
+        EnemyRigidbody.useGravity = false;
+        EnemyCollider.enabled = false;
+
+        yield return new WaitForSeconds(1.5f);
+
+        gameObject.SetActive(false);
+    }
+
+    
 
 }

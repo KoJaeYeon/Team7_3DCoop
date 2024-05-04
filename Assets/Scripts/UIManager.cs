@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject setting;
     public GameObject Sound;
     public GameObject Music;
+    public GameObject SrStart;
     Slider slider1;
     Slider slider2;
     private void Awake()
@@ -32,6 +33,7 @@ public class UIManager : MonoBehaviour
     public void ReTurnButton()
     {
         SceneManager.LoadScene("SampleScene");
+        SrStart.SetActive(false);
     }
 
     //메인이동 버튼
