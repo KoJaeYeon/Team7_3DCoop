@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketLauncer : Weapon,IWeapon
+public class Rifle : Weapon,IWeapon
 {
     private void Start()
     {
-        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.RocketLauncer);
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.Rifle);
     }
 
     private void Update()

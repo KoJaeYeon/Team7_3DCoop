@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Revolver : Weapon,IWeapon
 {
-    private void Awake()
+    private void Start()
     {
-        rapidSpeed = 1f;
-        bulletSpeed = 1f;
-        attackDamage = 1f;
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.Revolver);
     }
     private void Update()
     {
