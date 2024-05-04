@@ -6,7 +6,7 @@ public class ThrowingStar : Weapon,IWeapon
 {
     private void Start()
     {
-        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.ThorwingStars);
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.ThrowingStars);
     }
     public override void Fire()
     {
