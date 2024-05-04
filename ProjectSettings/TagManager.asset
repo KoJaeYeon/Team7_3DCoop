@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sword
+  - SMG
+  - RocketLauncher
+  - Rifle
+  - Revolver
+  - MahineGun
+  - Bow
+  - Glove
   layers:
   - Default
   - TransparentFX

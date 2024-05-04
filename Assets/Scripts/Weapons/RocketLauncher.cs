@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowingStar : Weapon,IWeapon
+public class RocketLauncher : Weapon,IWeapon
 {
     private void Start()
     {
-        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.ThrowingStars);
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.RocketLauncher);
     }
     public override void Fire()
     {

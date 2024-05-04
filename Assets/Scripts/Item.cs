@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] Weapon;
-
-    [SerializeField]
-    private int ItemBoxHp;
-
+    // Start is called before the first frame update
     void Start()
     {
         
