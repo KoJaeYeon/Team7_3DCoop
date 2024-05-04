@@ -49,6 +49,19 @@ public class MyWeapon : MonoBehaviour
             case WeaponType.RocketLauncer:
                 weapon = gameObject.AddComponent<RocketLauncer>();
                 break;
+            case WeaponType.SMG:
+                weapon = gameObject.AddComponent<SMG>();
+                break;
+            case WeaponType.Rifle:
+                weapon = gameObject.AddComponent<Rifle>();
+                break;
+            case WeaponType.Bow:
+                weapon = gameObject.AddComponent<Bow>();
+                break;
+            case WeaponType.ThorwingStars:
+                weapon = gameObject.AddComponent<ThrowingStar>();
+                break;
+
         }
     }
     private void Update()
@@ -57,6 +70,10 @@ public class MyWeapon : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Escape))
         {
             SetWeapon(WeaponType.MachineGun);
+        }
+        else if (Input.GetKeyUp(KeyCode.F1))
+        {
+            SetWeapon(WeaponType.RocketLauncer);
         }
     }
 }
