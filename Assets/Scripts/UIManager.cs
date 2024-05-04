@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,25 +12,31 @@ public class UIManager : MonoBehaviour
     public GameObject SrStart;
     Slider slider1;
     Slider slider2;
- 
+    private void Awake()
+    {
+        slider1 =GameObject.Find("Sound").GetComponent<Slider>();
+        slider2 = GameObject.Find("Music").GetComponent<Slider>();
+    }
 
     //시작버튼
     public void StartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     //세팅버튼
     public void SettingButton()
     {
         setting.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     //다시시작버튼
     public void ReTurnButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainGame");
         SrStart.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     //메인이동 버튼
@@ -43,6 +50,7 @@ public class UIManager : MonoBehaviour
     public void BkButton()
     {
         setting.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     //소리 버튼
