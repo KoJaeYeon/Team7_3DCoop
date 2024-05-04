@@ -2639,6 +2639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWeapons: []
   weaponType: 0
+  powerUpInt: 0
 --- !u!1 &804206533
 GameObject:
   m_ObjectHideFlags: 0
@@ -6240,6 +6241,10 @@ PrefabInstance:
     - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_Name
       value: Character_GhillieSuit_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
