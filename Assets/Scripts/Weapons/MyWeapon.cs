@@ -7,13 +7,16 @@ public enum WeaponType
 { 
     Revolver,
     MachineGun,
-    RocketLauncer
+    RocketLauncer,
+    SMG,
+    Rifle,
+    Bow,
+    ThorwingStars
 }
 public class MyWeapon : MonoBehaviour
 {
     private IWeapon weapon;
     public WeaponType myWeapon;
-
     private void Start()
     {
         InitWeapon();
