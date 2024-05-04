@@ -35,7 +35,7 @@ public class MyWeapon : MonoBehaviour
     public void SetWeapon(WeaponType weaponType)
     {
         Debug.Log($"SetWeapon : {weaponType}");
-        myWeapon = weaponType;
+        this.weaponType = weaponType;
 
         DeactiveAllWeapons();
 
@@ -76,41 +76,13 @@ public class MyWeapon : MonoBehaviour
     private void Update()
     {
         weapon.Fire();
-        if(Input.GetKeyUp(KeyCode.Alpha1))
+        if(Input.GetKeyUp(KeyCode.F1))
         {
             SetWeapon(WeaponType.MachineGun);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        else if (Input.GetKeyUp(KeyCode.F2))
         {
             SetWeapon(WeaponType.RocketLauncher);
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha3))
-        {
-            SetWeapon(WeaponType.SMG);
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha4))
-        {
-            SetWeapon(WeaponType.Rifle);
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha5))
-        {
-            SetWeapon(WeaponType.Bow);
-        }
-        else if (Input.GetKeyUp(KeyCode.Alpha6))
-        {
-            SetWeapon(WeaponType.ThrowingStars);
-        }
-        
-    }
-
-    private void DeactiveAllWeapons()
-    {
-        foreach(Transform child in transform)
-        {
-            if (child.gameObject.activeSelf)
-            {
-                child.gameObject.SetActive(false);
-            }
         }
         else if (Input.GetKeyUp(KeyCode.F3))
         {
@@ -126,11 +98,23 @@ public class MyWeapon : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.F6))
         {
-            SetWeapon(WeaponType.ThorwingStars);
+            SetWeapon(WeaponType.ThrowingStars);
         }
         else if (Input.GetKeyUp(KeyCode.F7))
         {
             SetWeapon(WeaponType.Revolver);
+        }
+
+    }
+
+    private void DeactiveAllWeapons()
+    {
+        foreach(Transform child in transform)
+        {
+            if (child.gameObject.activeSelf)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }

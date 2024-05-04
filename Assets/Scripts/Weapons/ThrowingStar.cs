@@ -19,15 +19,15 @@ public class ThrowingStar : Weapon,IWeapon
     
     IEnumerator ThrowStar()
     {
-        ShootStar();
+        ShootStars();
         yield return new WaitForSeconds(weaponData.rapidSpeed / 5);
-        ShootStar();
+        ShootStars();
         yield return new WaitForSeconds(weaponData.rapidSpeed / 5);
-        ShootStar();
+        ShootStars();
         yield break;
     }
 
-    public void ShootStar()
+    public void ShootStars()
     {
         GameObject bulletObject = PoolManager.Instance.GetStar();
         Rigidbody rigid = bulletObject.GetComponent<Rigidbody>();
@@ -36,6 +36,6 @@ public class ThrowingStar : Weapon,IWeapon
         bulletObject.transform.position = transform.position; // MyWeapon 위치로 총알 발사
         Bullet bullet = bulletObject.GetComponent<Bullet>();
         bullet.InitBullet();
-        bullet.SetBullet(weaponData.attackDamage * WeaponManager.Instance.weaponDamage, weaponData.piercing, weaponData.radius, weaponData.explodeActive);//플레이어 공격력 받아와야함
+        bullet.SetBullet(weaponData.attackDamage * WeaponManager.Instance.damageMultiplier, weaponData.piercing, weaponData.radius, weaponData.explodeActive);//플레이어 공격력 받아와야함
     }
 }

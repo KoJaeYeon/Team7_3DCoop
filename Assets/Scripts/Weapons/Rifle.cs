@@ -19,7 +19,7 @@ public class Rifle : Weapon,IWeapon
             bulletObject.transform.position = transform.position; // MyWeapon 위치로 총알 발사
             Bullet bullet = bulletObject.GetComponent<Bullet>();
             bullet.InitBullet();
-            bullet.SetBullet(weaponData.attackDamage * WeaponManager.Instance.weaponDamage, weaponData.piercing, weaponData.radius, weaponData.explodeActive);//플레이어 공격력 받아와야함
+            bullet.SetBullet(weaponData.attackDamage * WeaponManager.Instance.damageMultiplier, weaponData.piercing, weaponData.radius, weaponData.explodeActive);//플레이어 공격력 받아와야함
             time = 0;
         }
     }

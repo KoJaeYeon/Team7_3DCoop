@@ -105,21 +105,21 @@ public class PoolManager : Singleton<PoolManager>
     }
     public GameObject GetRifle()
     {
-        GameObject rifle = bulletPools[1].Dequeue();
+        GameObject rifle = bulletPools[2].Dequeue();
         bulletPools[2].Enqueue(rifle);
         rifle.SetActive(true);
         return rifle;
     }
     public GameObject GetArrow()
     {
-        GameObject arrow = bulletPools[2].Dequeue();
+        GameObject arrow = bulletPools[3].Dequeue();
         bulletPools[3].Enqueue(arrow);
         arrow.SetActive(true);
         return arrow;
     }
     public GameObject GetStar()
     {
-        GameObject star = bulletPools[3].Dequeue();
+        GameObject star = bulletPools[4].Dequeue();
         bulletPools[4].Enqueue(star);
         star.SetActive(true);
         return star;
