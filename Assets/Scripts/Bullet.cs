@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -26,9 +27,9 @@ public class Bullet : MonoBehaviour
         this.explodeActive = explodeActive;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        IHitAble hitAble = collision.gameObject.GetComponent<IHitAble>();
+        IHitAble hitAble = other.GetComponent<IHitAble>();
         if (hitAble != null)
         {
             if (!explodeActive) // 일반형
@@ -42,15 +43,14 @@ public class Bullet : MonoBehaviour
             }
             else // 폭발형
             {
-                Collider[] bombColliders = Physics.OverlapSphere(collision.transform.position, radius, 6);
-
-                for(int i = 0; i < bombColliders.Length; i++)
+                Collider[] bombColliders = Physics.OverlapSphere(other.transform.position, radius, LayerMask.GetMask("EnemyTarget"));
+                for (int i = 0; i < bombColliders.Length; i++)
                 {
                     hitAble = bombColliders[i].GetComponent<IHitAble>();
                     hitAble.Damaged(attackDamage);
                 }
                 piercing--;
-                if(piercing == 0)
+                if (piercing == 0)
                 {
                     gameObject.SetActive(false);
                 }

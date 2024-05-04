@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class MacineGun : Weapon,IWeapon
 {
-    private void Awake()
+    private void Start()
     {
-        rapidSpeed = 0.5f;
-        bulletSpeed = 2f;
-        attackDamage = 2f;
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.MachineGun);
     }
     public override void Fire()
     {

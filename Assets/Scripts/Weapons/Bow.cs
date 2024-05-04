@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Revolver : Weapon,IWeapon
+public class Bow : Weapon,IWeapon
 {
     private void Start()
     {
-        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.Revolver);
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.Bow);
     }
     public override void Fire()
     {
