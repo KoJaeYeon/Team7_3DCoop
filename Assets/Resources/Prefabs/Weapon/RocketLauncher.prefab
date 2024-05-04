@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23100420200266682}
   - component: {fileID: 64621371638796974}
   m_Layer: 0
-  m_Name: SM_Wep_RocketLauncher_01
+  m_Name: RocketLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

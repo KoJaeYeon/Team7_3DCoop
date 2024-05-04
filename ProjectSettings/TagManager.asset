@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Sword
   - Enemy
+  - DeadZone
+
   layers:
   - Default
   - TransparentFX

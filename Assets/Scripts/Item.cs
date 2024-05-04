@@ -6,6 +6,7 @@ using TMPro;
 
 public class Item : MonoBehaviour,IHitAble
 {
+
     private WeaponType weaponType;
     public GameObject BoxParticle;
     private TMP_Text BoxHpText;
@@ -65,7 +66,7 @@ public class Item : MonoBehaviour,IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //ÇÃ·¹ÀÌ¾î¿¡°Ô ÇÇÇØ¸¦ ÀÔÈù´Ù.
+            //ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
             Instantiate(BoxParticle, transform.position, Quaternion.identity);
             ReturnBox();
         }
@@ -85,7 +86,7 @@ public class Item : MonoBehaviour,IHitAble
                 weaponType = WeaponType.MachineGun;
                 break;
             case 3:
-                weaponType = WeaponType.RocketLauncer;
+                weaponType = WeaponType.RocketLauncher;
                 break;
             case 4:
                 weaponType = WeaponType.SMG;
@@ -97,7 +98,7 @@ public class Item : MonoBehaviour,IHitAble
                 weaponType = WeaponType.Bow;
                 break;
             case 7:
-                weaponType = WeaponType.ThorwingStars;
+                weaponType = WeaponType.ThrowingStars;
                 break;
         }
 
