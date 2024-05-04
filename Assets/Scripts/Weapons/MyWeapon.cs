@@ -35,16 +35,17 @@ public class MyWeapon : MonoBehaviour
     public void SetWeapon(WeaponType weaponType)
     {
         Debug.Log($"SetWeapon : {weaponType}");
+        this.weaponType = weaponType;
 
         DeactiveAllWeapons();
 
         Component component = gameObject.GetComponent<IWeapon>() as Component;
-        if (component != null) Destroy(component);
+        if (component != null) Destroy(component);       
 
         switch (weaponType)
         {
             case WeaponType.Revolver:
-                weapon = gameObject.AddComponent<Revolver>();
+                weapon = gameObject.AddComponent<Revolver>();                
                 break;
             case WeaponType.MachineGun:
                 weapon = gameObject.AddComponent<MachineGun>();
@@ -75,32 +76,35 @@ public class MyWeapon : MonoBehaviour
     private void Update()
     {
         weapon.Fire();
-
-        if(Input.GetKeyUp(KeyCode.Alpha1))
+        if(Input.GetKeyUp(KeyCode.F1))
         {
             SetWeapon(WeaponType.MachineGun);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha2))
+        else if (Input.GetKeyUp(KeyCode.F2))
         {
             SetWeapon(WeaponType.RocketLauncher);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha3))
+        else if (Input.GetKeyUp(KeyCode.F3))
         {
             SetWeapon(WeaponType.SMG);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha4))
+        else if (Input.GetKeyUp(KeyCode.F4))
         {
             SetWeapon(WeaponType.Rifle);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha5))
+        else if (Input.GetKeyUp(KeyCode.F5))
         {
             SetWeapon(WeaponType.Bow);
         }
-        else if (Input.GetKeyUp(KeyCode.Alpha6))
+        else if (Input.GetKeyUp(KeyCode.F6))
         {
             SetWeapon(WeaponType.ThrowingStars);
         }
-        
+        else if (Input.GetKeyUp(KeyCode.F7))
+        {
+            SetWeapon(WeaponType.Revolver);
+        }
+
     }
 
     private void DeactiveAllWeapons()
