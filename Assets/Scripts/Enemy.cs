@@ -33,8 +33,6 @@ public class Enemy : MonoBehaviour, IHitAble
 
         MovePos = transform.forward;
         EnemyAnimator.SetFloat("Run", 1f);
-
-        
     }
 
 

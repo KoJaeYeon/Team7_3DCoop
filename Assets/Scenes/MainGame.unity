@@ -4307,6 +4307,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1449399848, guid: ebf2cc118768d314988702254deb07a7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1449399848, guid: ebf2cc118768d314988702254deb07a7, type: 3}
       propertyPath: PlayerTransform
       value: 
       objectReference: {fileID: 1316471368}
@@ -5606,8 +5610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca85da09ecb2b7846ba8e57391da94c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colls: []
-  boxSize: {x: 2, y: 2, z: 2}
 --- !u!1001 &1781534573
 PrefabInstance:
   m_ObjectHideFlags: 0
