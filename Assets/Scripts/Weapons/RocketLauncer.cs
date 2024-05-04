@@ -4,18 +4,9 @@ using UnityEngine;
 
 public class RocketLauncer : Weapon,IWeapon
 {
-    private void Awake()
+    private void Start()
     {
-        rapidSpeed = 0.2f;
-        bulletSpeed = 2.5f;
-        attackDamage = 20f;
-        radius = 2.5f;
-        explodeActive = true;
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
+        weaponData = WeaponManager.Instance.GetWeaponData(WeaponType.RocketLauncer);
     }
     public override void Fire()
     {
