@@ -7,7 +7,7 @@ public class WeaponManager : Singleton<WeaponManager>
     public MyWeapon[] playerWeapons;
     public WeaponType weaponType;
 
-    private float weaponDamage = 1f;
+    public float weaponDamage = 1f;
     public int powerUpInt = 0;
 
 
