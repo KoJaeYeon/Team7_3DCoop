@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour, IHitAble
     private bool isMove = true;
     private bool OnAttack = true;
 
-    //�������� �÷��̾� 1���� ��ġ
     public Transform PlayerTransform;    
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
@@ -80,9 +79,9 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-
-            EnemyAnimator.SetFloat("Run", 0);
-            EnemyAnimator.SetBool("Attack", true);
+            OnAttack = true;
+            StartCoroutine(Attack());
+            EnemyAnimator.SetFloat("Run", 0);   
         } 
        
     }
@@ -91,8 +90,8 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            OnAttack = false;
             EnemyAnimator.SetFloat("Run", 1f);
-            EnemyAnimator.SetBool("Attack", false);
         }
     }
 
@@ -105,6 +104,17 @@ public class Enemy : MonoBehaviour, IHitAble
             isMove = false;
             StartCoroutine(Dead());
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        while (OnAttack)
+        {
+            EnemyAnimator.SetBool("Attack", true);
+            yield return new WaitForSeconds(1.0f);
+        }
+
+        EnemyAnimator.SetBool("Attack", false);
     }
 
 
