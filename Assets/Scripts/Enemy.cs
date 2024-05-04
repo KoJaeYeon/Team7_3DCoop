@@ -79,9 +79,7 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnAttack = true;
-            StartCoroutine(Attack());
-            EnemyAnimator.SetFloat("Run", 0);   
+            EnemyAnimator.SetBool("Attack", true);
         } 
        
     }
@@ -90,7 +88,7 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            OnAttack = false;
+            EnemyAnimator.SetBool("Attack", false);
             EnemyAnimator.SetFloat("Run", 1f);
         }
     }
@@ -106,21 +104,6 @@ public class Enemy : MonoBehaviour, IHitAble
         }
     }
 
-    private IEnumerator Attack()
-    {
-        EnemyAnimator.SetBool("Attack", true);
-
-        while (OnAttack)
-        {
-            Debug.Log("공격중");
-            
-            yield return new WaitForSeconds(1.0f);
-        }
-        Debug.Log("공격종료");
-        EnemyAnimator.SetBool("Attack", false);
-    }
-
-
     private IEnumerator Dead()
     {
         EnemyAnimator.SetTrigger("Die");
@@ -134,6 +117,6 @@ public class Enemy : MonoBehaviour, IHitAble
         gameObject.SetActive(false);
     }
 
-    
+  
 
 }
