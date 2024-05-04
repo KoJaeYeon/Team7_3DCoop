@@ -3,15 +3,21 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     
     public GameObject setting;
     public GameObject Sound;
     public GameObject Music;
     public GameObject SrStart;
+    public GameObject Weapon;
+    public Image canvasImage; // 캔버스의 이미지 요소
+    public Sprite[] spriteArray; // 이미지 변경을 위한 스프라이트 배열
+    private int currentSpriteIndex = 0; // 현재 스프라이트 인덱스
     Slider slider1;
     Slider slider2;
+
+
     private void Awake()
     {
         slider1 =GameObject.Find("Sound").GetComponent<Slider>();
@@ -76,6 +82,15 @@ public class UIManager : MonoBehaviour
     {
         Music.SetActive(false);
         slider2.value = 1;
+    }
+
+    public void SetWeapon(WeaponType weaponType)
+    {
+        Weapon.active = true;
+        int spriteIndex = (int)weaponType; // 무기 유형에 해당하는 스프라이트 인덱스 계산
+        canvasImage.sprite = spriteArray[currentSpriteIndex]; // 현재 스프라이트로 이미지
+
+
     }
 
 }
