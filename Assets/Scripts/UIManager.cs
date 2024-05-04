@@ -11,11 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject SrStart;
     Slider slider1;
     Slider slider2;
-    private void Awake()
-    {
-        slider1 =GameObject.Find("Sound").GetComponent<Slider>();
-        slider2 = GameObject.Find("Music").GetComponent<Slider>();
-    }
+ 
 
     //시작버튼
     public void StartButton()
