@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour, IHitAble
         isMove = true;
         MovePos = transform.forward;
         EnemyAnimator.SetFloat("Run", 1f);
+        StartCoroutine(ReturnTimer());
     }
 
     public void SetHp(float Hp)
@@ -112,6 +113,12 @@ public class Enemy : MonoBehaviour, IHitAble
 
         yield return new WaitForSeconds(1.5f);
 
+        ReturnEnemy();
+    }
+
+    private IEnumerator ReturnTimer()
+    {
+        yield return new WaitForSeconds(20.0f);
         ReturnEnemy();
     }
 
