@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using TMPro;
+
+
+
 
 public class UIManager : MonoBehaviour
 {
@@ -17,7 +22,28 @@ public class UIManager : MonoBehaviour
 
     Slider slider1;
     Slider slider2;
+
+    public TMP_Text timetext;
+    public TMP_Text scoretext;
+
+    private float time = 0;
+    private int hour;
+    private int minute;
+    private int second;
+    private bool isTime = false;
  
+    
+
+    private void Awake()
+    {
+        time = 0;
+
+        isTime = true;
+
+        StartCoroutine(TimeCount(time));
+
+    }
+
 
     //시작버튼
     public void StartButton()
@@ -29,6 +55,7 @@ public class UIManager : MonoBehaviour
     public void SettingButton()
     {
         setting.SetActive(true);
+        Time.timeScale = 0;
     }
 
     //다시시작버튼
@@ -36,12 +63,15 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
         SrStart.SetActive(false);
+        Time.timeScale = 1;
+
     }
 
     //메인이동 버튼
     public void MainButton()
     {
        SceneManager.LoadScene("Main");
+        Time.timeScale = 1;
 
     }
 
@@ -49,6 +79,7 @@ public class UIManager : MonoBehaviour
     public void BkButton()
     {
         setting.SetActive(false);
+        Time.timeScale = 1;
     }
 
     //소리 버튼
@@ -85,6 +116,33 @@ public class UIManager : MonoBehaviour
         canvasImage.sprite = spriteArray[ImageIndex]; // 현재 스프라이트로 이미지
 
 
+    }
+
+    IEnumerator TimeCount(float time)
+    {
+
+        while (isTime)
+        {
+            time += Time.deltaTime;//경과 시간 누적
+
+            //걍과 시간 시, 분, 초로 변환하여 UI표시
+            hour = (int)(time / 3600);
+            minute = (int)(time % 3600 / 60);
+            second = (int)(time % 60);
+            timetext.text = "Time : " + hour.ToString("00") + " : " + minute.ToString("00") + " : " + second.ToString("00");
+           
+
+            yield return null;
+
+        }
+
+
+    }
+
+    public void Score(int score)
+    {
+
+        scoretext.text = "Score : " + score;
     }
 
 
