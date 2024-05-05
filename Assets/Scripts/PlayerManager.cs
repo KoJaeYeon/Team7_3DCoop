@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerManager : Singleton<PlayerManager>
 {
     public GameObject[] playerPrefabs;
     
@@ -10,12 +10,6 @@ public class Player : MonoBehaviour
     public static int playerCountMax = 5;
 
     public Vector3[] positionOffset;
-
-    private void Awake()
-    {
-        playerCount = 1;
-        playerCountMax = 5;
-    }
 
     private void Start()
     {
@@ -29,6 +23,9 @@ public class Player : MonoBehaviour
 
     private void InitPlayer()
     {
+        playerCount = 1;
+        playerCountMax = 5;
+
         DeactivePlayer();
 
         playerPrefabs[0].transform.position = transform.position + positionOffset[0];
@@ -55,7 +52,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void PlayerMinus()
+    public void PlayerMinus()
     {
         if(playerCount > 0)
         {
