@@ -93,7 +93,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void SpawnEnemyPoint()
     {
-        Debug.Log("SpawnEnemy");
+        //Debug.Log("SpawnEnemy");
         GameObject prefab = PoolManager.Instance.GetEnemy();
         prefab.transform.position = itemSpawnTrans[1].position + Vector3.right * Random.Range(-4,4);
         prefab.transform.eulerAngles = new Vector3(0,-180,0);

@@ -44,11 +44,15 @@ public class PlayerManager : Singleton<PlayerManager>
 
             playerPrefabs[playerCount - 1].transform.position = newPosition;
             playerPrefabs[playerCount - 1].gameObject.SetActive(true);
+
+            Debug.Log($"현재 플레이어의 수 : {playerCount}");
         }
 
         else
         {
             WeaponManager.Instance.PowerUP();
+
+            Debug.Log("파워업!");
         }
     }
 
@@ -59,6 +63,8 @@ public class PlayerManager : Singleton<PlayerManager>
             playerCount--;
 
             playerPrefabs[playerCount].gameObject.SetActive(false);
+
+            Debug.Log($"현재 플레이어의 수 : {playerCount}");
         }
 
         if(playerCount == 0)

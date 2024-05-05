@@ -34,7 +34,7 @@ public class MyWeapon : MonoBehaviour
 
     public void SetWeapon(WeaponType weaponType)
     {
-        Debug.Log($"SetWeapon : {weaponType}");
+        //Debug.Log($"SetWeapon : {weaponType}");
         this.weaponType = weaponType;
 
         DeactiveAllWeapons();
