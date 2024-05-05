@@ -97,7 +97,7 @@ public class SpawnManager : Singleton<SpawnManager>
         prefab.transform.position = itemSpawnTrans[1].position + Vector3.right * Random.Range(-4,4);
         prefab.transform.eulerAngles = new Vector3(0,-180,0);
         Enemy enemy = prefab.GetComponent<Enemy>();
-        enemy.PlayerTransform = playerTrans;
+        enemy.PlayerPos = playerTrans.position;
         enemy.SetHp(enemyHelath);
     }
 

@@ -176,4 +176,13 @@ public class Item : MonoBehaviour, IHitAble
 
         ReturnBox();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerManager.Instance.PlayerMinus();
+            ReturnBox();
+        }
+    }
 }
