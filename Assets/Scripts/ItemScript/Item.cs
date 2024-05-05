@@ -85,13 +85,11 @@ public class Item : MonoBehaviour, IHitAble
             {
                 //아이템 변경
                 WeaponManager.Instance.SetWeapon(weaponType);
-                isWeapon = false;
             }
             else if (isPowerUp)
             {
                 //파워업
                 WeaponManager.Instance.PowerUP();
-                isPowerUp = false;
             }
             else
             {
@@ -127,10 +125,12 @@ public class Item : MonoBehaviour, IHitAble
         if (isWeapon)
         {
             BoxItemText.text = "New Weapon";
+            isWeapon = false;
         }
         else if (isPowerUp)
         {
             BoxItemText.text = "Power Up";
+            isPowerUp = false;
         }
         else
         {
