@@ -917,10 +917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8edce7af787c10741a046f009c43fe7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 267951872030450593, guid: af342b711d2a2b342b462e2f647c7add, type: 3}
+  bulletPrefab: []
   enemyPrefab: {fileID: 152785609507544962, guid: 8f92156fe04650a49994bbacb15da7d4, type: 3}
   itemBoxPrefab: {fileID: 152785609507544962, guid: 8f92156fe04650a49994bbacb15da7d4, type: 3}
-  bulletTrans: {fileID: 1442465198}
+  bulletTrans: []
   enemyTrans: {fileID: 1883916525}
   itemBoxTrans: {fileID: 1299067070}
 --- !u!1 &251958293
@@ -2298,7 +2298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dddef0eb4e00449bc923ac9e307143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: 0
+  weaponPrefabs: []
 --- !u!4 &514291280
 Transform:
   m_ObjectHideFlags: 0
@@ -3362,6 +3362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerWeapons: []
   weaponType: 0
+  damageMultiplier: 1
   powerUpInt: 0
 --- !u!1 &804206533
 GameObject:
@@ -4056,8 +4057,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272.86993, y: 0.581604}
-  m_SizeDelta: {x: 65, y: 65}
+  m_AnchoredPosition: {x: -270, y: 9.6335}
+  m_SizeDelta: {x: 65, y: 71.267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067669355
 MonoBehaviour:
@@ -5161,7 +5162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dddef0eb4e00449bc923ac9e307143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: 0
+  weaponPrefabs: []
 --- !u!1001 &1358514671
 PrefabInstance:
   m_ObjectHideFlags: 0
