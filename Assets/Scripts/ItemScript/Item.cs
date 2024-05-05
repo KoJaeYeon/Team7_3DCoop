@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
-public class Item : MonoBehaviour,IHitAble
+public class Item : MonoBehaviour, IHitAble
 {
-
     private WeaponType weaponType;
-    public GameObject BoxParticle;
+    private GameObject BoxParticle;
+    private BoxCollider boxCollider;
 
-    private TMP_Text BoxHpText;
-    private TMP_Text BoxWeaponText;
-    private TMP_Text BoxPowerUpText;
-    private TMP_Text BoxAddPlayerText;
+    public TMP_Text BoxHpText;
+    public TMP_Text BoxItemText;
 
     private int BoxHp;
     public float BoxSpeed;
@@ -24,18 +21,30 @@ public class Item : MonoBehaviour,IHitAble
 
     private void OnEnable()
     {
-        isMove = true;
-
-        BoxHpText.text = BoxHp.ToString();
+        InitBox();
         StartCoroutine(ReturnTimer());
+    }
+
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void InitBox()
+    {
+        isMove = true;
+        boxCollider.enabled = true;
+        transform.GetChild(0).gameObject.SetActive(true);
+       
+        //텍스트 활성화/비활성화
+        BoxHpText.gameObject.SetActive(true);
+        BoxItemText.gameObject.SetActive(false);
     }
 
     public void SetBoxHp(int Hp)
     {
         BoxHp = Hp;
-        #region 체력바 수정
         BoxHpText.text = BoxHp.ToString();
-        #endregion
     }
 
     public void SetItem(bool isWeapon, bool isPowerUp, WeaponType weapon = WeaponType.Revolver)
@@ -45,11 +54,6 @@ public class Item : MonoBehaviour,IHitAble
         this.weaponType = weapon;
     }
 
-    private void Awake()
-    {
-        BoxHpText = transform.GetComponentInChildren<TMP_Text>();
-    }
-
     private void FixedUpdate()
     {
         Move();
@@ -57,7 +61,7 @@ public class Item : MonoBehaviour,IHitAble
 
     private void Move()
     {
-        if(isMove)
+        if (isMove)
         {
             Vector3 Move = Vector3.back * BoxSpeed * Time.deltaTime;
             transform.Translate(Move);
@@ -70,9 +74,12 @@ public class Item : MonoBehaviour,IHitAble
 
         BoxHpText.text = BoxHp.ToString();
 
-        if(BoxHp <= 0)
+        if (BoxHp <= 0)
         {
             isMove = false;
+            BoxHpText.gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);  
+            boxCollider.enabled = false;
 
             if (isWeapon)
             {
@@ -82,22 +89,26 @@ public class Item : MonoBehaviour,IHitAble
             }
             else if (isPowerUp)
             {
-                //파워업 처리
+                //파워업
                 WeaponManager.Instance.PowerUP();
                 isPowerUp = false;
             }
             else
             {
                 //플레이어 증가
-                PlayerManager.Instance.PlayerPlus();
+                //PlayerManager.Instance.PlayerPlus();
             }
 
-
-            Instantiate(BoxParticle,transform.position, Quaternion.identity);
-            ReturnBox();
+            Explosion();
+            StartCoroutine(ActiveText());
         }
     }
 
+    private void Explosion() //폭발 파티클
+    {
+        BoxParticle = PoolManager.Instance.GetPartivle();
+        BoxParticle.transform.position = transform.position;
+    }
     public void ReturnBox()
     {
         gameObject.SetActive(false);
@@ -109,28 +120,25 @@ public class Item : MonoBehaviour,IHitAble
         ReturnBox();
     }
 
-    //private IEnumerator WeaponText()
-    //{
-
-    //}
-
-    //private IEnumerator PowerUpText()
-    //{
-
-    //}
-
-    //private IEnumerator AddPlayerText()
-    //{
-
-    //}
-
-    private void OnCollisionEnter(Collision collision)
+    private IEnumerator ActiveText()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        BoxItemText.gameObject.SetActive(true);
+
+        if (isWeapon)
         {
-            Instantiate(BoxParticle, transform.position, Quaternion.identity);
-            ReturnBox();
+            BoxItemText.text = "New Weapon";
+        }
+        else if (isPowerUp)
+        {
+            BoxItemText.text = "Power Up";
+        }
+        else
+        {
+            BoxItemText.text = "Player++";
         }
 
+        yield return new WaitForSeconds(1.5f);
+
+        ReturnBox();
     }
 }
