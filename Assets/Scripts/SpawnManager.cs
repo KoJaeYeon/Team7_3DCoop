@@ -104,7 +104,102 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public WeaponType WeaponRand()
     {
-        WeaponType weaponType = WeaponType.Revolver;
+        WeaponType weaponType;
+        float random = Random.Range(0,100);
+        switch(gameLevel)
+        {
+            case 1:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 40) { weaponType = WeaponType.SMG; }
+                else if (random < 70) { weaponType = WeaponType.Bow; }
+                else { weaponType = WeaponType.ThrowingStars; }
+                break;
+            case 2:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 30) { weaponType = WeaponType.SMG; }
+                else if (random < 60) { weaponType = WeaponType.Bow; }
+                else if (random < 95) { weaponType = WeaponType.ThrowingStars; }
+                else { weaponType = WeaponType.MachineGun; }
+                break;
+            case 3:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 25) { weaponType = WeaponType.SMG; }
+                else if (random < 55) { weaponType = WeaponType.Bow; }
+                else if (random < 90) { weaponType = WeaponType.ThrowingStars; }
+                else { weaponType = WeaponType.MachineGun; }
+                break;
+            case 4:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 25) { weaponType = WeaponType.SMG; }
+                else if (random < 55) { weaponType = WeaponType.Bow; }
+                else if (random < 86) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 94) { weaponType = WeaponType.MachineGun; }
+                else { weaponType = WeaponType.Rifle; }
+                break;
+            case 5:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 25) { weaponType = WeaponType.SMG; }
+                else if (random < 45) { weaponType = WeaponType.Bow; }
+                else if (random < 80) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 90) { weaponType = WeaponType.MachineGun; }
+                else { weaponType = WeaponType.Rifle; }
+                break;
+            case 6:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 20) { weaponType = WeaponType.SMG; }
+                else if (random < 40) { weaponType = WeaponType.Bow; }
+                else if (random < 60) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 75) { weaponType = WeaponType.MachineGun; }
+                else if (random < 90) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+            case 7:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 15) { weaponType = WeaponType.SMG; }
+                else if (random < 30) { weaponType = WeaponType.Bow; }
+                else if (random < 55) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 70) { weaponType = WeaponType.MachineGun; }
+                else if (random < 90) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+            case 8:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 10) { weaponType = WeaponType.SMG; }
+                else if (random < 20) { weaponType = WeaponType.Bow; }
+                else if (random < 30) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 55) { weaponType = WeaponType.MachineGun; }
+                else if (random < 80) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+            case 9:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 10) { weaponType = WeaponType.SMG; }
+                else if (random < 15) { weaponType = WeaponType.Bow; }
+                else if (random < 25) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 45) { weaponType = WeaponType.MachineGun; }
+                else if (random < 70) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+            case 10:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 10) { weaponType = WeaponType.SMG; }
+                else if (random < 15) { weaponType = WeaponType.Bow; }
+                else if (random < 20) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 50) { weaponType = WeaponType.MachineGun; }
+                else if (random < 70) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+            default:
+                if (random < 5) { weaponType = WeaponType.Revolver; }
+                else if (random < 10) { weaponType = WeaponType.SMG; }
+                else if (random < 15) { weaponType = WeaponType.Bow; }
+                else if (random < 20) { weaponType = WeaponType.ThrowingStars; }
+                else if (random < 45) { weaponType = WeaponType.MachineGun; }
+                else if (random < 65) { weaponType = WeaponType.Rifle; }
+                else { weaponType = WeaponType.RocketLauncher; }
+                break;
+        }
+
         return weaponType;
     }
 
