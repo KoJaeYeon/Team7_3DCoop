@@ -304,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46a48b58b92609748a9ad3b51e80f889, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -469,13 +469,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7901faec99b09344e941432395d4e4a5, type: 3}
   - {fileID: 21300000, guid: da9f27870047b054e829424e18c968a8, type: 3}
   WeaponSprite:
-  - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
-  - {fileID: 21300000, guid: 2da13245f74782647b98bf5144253062, type: 3}
-  - {fileID: 21300000, guid: 46a48b58b92609748a9ad3b51e80f889, type: 3}
-  - {fileID: 21300000, guid: f604129b3aaca88479828a1a2f0259c9, type: 3}
-  - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
-  - {fileID: 21300000, guid: e5e3d5bed5ec50f47a72459c2e1c1985, type: 3}
-  - {fileID: 21300000, guid: 3f8f8ecb3615b524c99080c250a4f01c, type: 3}
+  - {fileID: 21300000, guid: 1316c1c78512e9344b55aa0d097626cf, type: 3}
+  - {fileID: 21300000, guid: aa3143245ec049d4b9d34bd3308852b7, type: 3}
+  - {fileID: 21300000, guid: de967b806dd1add44a0a0b7514dd184c, type: 3}
+  - {fileID: 21300000, guid: bd43d163df2a7a54da2f36130fcdd8ef, type: 3}
+  - {fileID: 21300000, guid: 0788cee97c3626f49b43dd5e42c390f2, type: 3}
+  - {fileID: 21300000, guid: e275fa5758809dc489b11250b8043482, type: 3}
+  - {fileID: 21300000, guid: 614f04e465554e34180d04658f68a4cd, type: 3}
   BoxSpeed: 4
 --- !u!65 &1688554709
 BoxCollider:
