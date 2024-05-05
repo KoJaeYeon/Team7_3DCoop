@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHitAble
 {
-    public float EnemyHp;
-    public float EnemySpeed;
-    public float EnemyMaxSpeed;
-    public float TargetDistance;
-    public int EnemyAtk;
+    private float EnemyHp;
+    private float EnemySpeed = 8.0f;
+    private float EnemyMaxSpeed = 4.0f;
+    private float TargetDistance = 10.0f;
+    private int EnemyAtk = 10;
 
     private bool isMove = true;
 
