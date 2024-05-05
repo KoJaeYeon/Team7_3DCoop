@@ -78,8 +78,7 @@ public class SpawnManager : Singleton<SpawnManager>
         }
         else 
         {
-            WeaponType weaponType = WeaponType.MachineGun;
-            item.SetItem(true, false, weaponType);
+            item.SetItem(true, false, WeaponRand());
         }
     }
 
