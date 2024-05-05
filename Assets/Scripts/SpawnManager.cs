@@ -85,8 +85,8 @@ public class SpawnManager : Singleton<SpawnManager>
     public void UpdateLevel(int level)
     {
         spawnSpeedMultiflier *= 0.9f;
-        enemyHelath += 0.5f;
-        enemyHelath *= 1.05f;
+        enemyHelath += 1f;
+        enemyHelath *= 1.2f;
         gameLevel = level;
     }
 

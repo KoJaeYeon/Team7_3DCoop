@@ -9291,7 +9291,7 @@ MonoBehaviour:
   - {fileID: 1308123668}
   - {fileID: 1624272770}
   - {fileID: 1350368999}
-  playerTrans: {fileID: 0}
+  playerTrans: {fileID: 1948173561}
   itemSpawnTimer: 5
   enemySpawnTimer: 1.5
   spawnSpeedMultiflier: 1
