@@ -35,6 +35,9 @@ public class Item : MonoBehaviour,IHitAble
     public void SetBoxHp(int Hp)
     {
         BoxHp = Hp;
+        #region 체력바 수정
+        BoxHpText.text = BoxHp.ToString();
+        #endregion
     }
 
     public void SetItem(bool isWeapon, bool isPowerUp, WeaponType weapon = WeaponType.Revolver)

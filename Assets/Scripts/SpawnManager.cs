@@ -12,7 +12,7 @@ public class SpawnManager : Singleton<SpawnManager>
 
     private float enemyHelath = 1f;
 
-    private int gameLevel;
+    private int gameLevel = 1;
 
 
     private void Start()
@@ -44,7 +44,11 @@ public class SpawnManager : Singleton<SpawnManager>
         int count = Random.Range(1, 3); //1, 2
         if(count == 1)
         {
-            PoolManager.Instance.GetItemBox().transform.position = itemSpawnTrans[Random.Range(0, 3)].position;
+            GameObject itemBoxPrefab = PoolManager.Instance.GetItemBox();
+            itemBoxPrefab.transform.position = itemSpawnTrans[Random.Range(0, 3)].position;
+            Item item = itemBoxPrefab.GetComponent<Item>();
+            item.SetBoxHp(Random.Range(1*gameLevel, 10*gameLevel));
+            SetItem(item);
         }
         else // count = 2
         {
@@ -52,8 +56,30 @@ public class SpawnManager : Singleton<SpawnManager>
             for(int i = 0; i < 3; i++)
             {
                 if (exceptNum == i) continue;
-                PoolManager.Instance.GetItemBox().transform.position = itemSpawnTrans[i].position;
+                GameObject itemBoxPrefab = PoolManager.Instance.GetItemBox();
+                itemBoxPrefab.transform.position = itemSpawnTrans[Random.Range(0, 3)].position;
+                Item item = itemBoxPrefab.GetComponent<Item>();
+                item.SetBoxHp(Random.Range(1 * gameLevel, 10 * gameLevel));
+                SetItem(item);
             }
+        }
+    }
+
+    public void SetItem(Item item)
+    {
+        float random = Random.Range(0, 3);
+        if(random < 1) // 플레이어 숫자
+        {
+            item.SetItem(false, false);
+        }
+        else if(random < 2)
+        {
+            item.SetItem(false, true);
+        }
+        else 
+        {
+            WeaponType weaponType = WeaponType.MachineGun;
+            item.SetItem(true, false, weaponType);
         }
     }
 
@@ -69,11 +95,11 @@ public class SpawnManager : Singleton<SpawnManager>
     {
         Debug.Log("SpawnEnemy");
         GameObject prefab = PoolManager.Instance.GetEnemy();
-        prefab.transform.position = itemSpawnTrans[1].position + Vector3.right * Random.Range(-5,5);
+        prefab.transform.position = itemSpawnTrans[1].position + Vector3.right * Random.Range(-4,4);
         prefab.transform.eulerAngles = new Vector3(0,-180,0);
         Enemy enemy = prefab.GetComponent<Enemy>();
         enemy.PlayerTransform = playerTrans;
-        enemy.EnemyHp = enemyHelath;
+        enemy.SetHp(enemyHelath);
     }
 
 }
