@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;   
+    private float TargetDistance = 10.0f;
+    private int EnemyScore;
 
     private bool isMove = true;
 
@@ -92,6 +93,14 @@ public class Enemy : MonoBehaviour, IHitAble
     }
 
 
+    private void Score()
+    {
+        EnemyScore = GameManager.Instance.GetGameLevel() * 10;
+        //GameManager.Instance.ScoreUp(EnemyScore);
+    }
+
+
+
     public void Damaged(float damage)
     {
         EnemyHp -= damage;
@@ -111,7 +120,8 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
-        //¸ó½ºÅÍ°¡ Á×À¸¸é Score ++ Ãß°¡¿¹Á¤
+        //ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Score ++ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½
+        Score();
 
         yield return new WaitForSeconds(1.5f);
 
