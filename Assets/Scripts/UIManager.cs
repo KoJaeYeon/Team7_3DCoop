@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject SrStart;
 
     [Header("Weaponimage")]
-    private WeaponType weapon;
+    private int weapon;
     public Image canvasImage;
     public Sprite[] spriteArray;
 
@@ -41,92 +41,39 @@ public class UIManager : MonoBehaviour
 
         isTime = true;
 
+        weapon = 0;
+
         StartCoroutine(TimeCount(time));
 
-        SetWeapon(WeaponManager.Instance.weaponType);
+        Debug.Log("start : " + weapon);
 
         setting.SetActive(false);
 
     }
 
-    public void SetWeapon(WeaponType weaponType)
-    {
-        Debug.Log($"JiheWeapon : {weaponType}");
-        weapon = weaponType;
+    
 
-
-        switch (weaponType)
-        {
-            case WeaponType.Revolver:
-                canvasImage.sprite = spriteArray[0];
-
-                break;
-            case WeaponType.MachineGun:
-                canvasImage.sprite = spriteArray[1];
-                break;
-            case WeaponType.RocketLauncher:
-                canvasImage.sprite = spriteArray[2];
-                break;
-            case WeaponType.SMG:
-                canvasImage.sprite = spriteArray[3];
-                break;
-            case WeaponType.Rifle:
-                canvasImage.sprite = spriteArray[4];
-                break;
-            case WeaponType.Bow:
-                canvasImage.sprite = spriteArray[5];
-                break;
-            case WeaponType.ThrowingStars:
-                canvasImage.sprite = spriteArray[6];
-                break;
-        }
-
-        
-    }
-    private void Update()
+    void Update()
     {
         
-        if (Input.GetKeyUp(KeyCode.F1))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            SetWeapon(WeaponType.MachineGun);
-            Debug.Log("f1");
+            Debug.Log("키");
+            SetWeapon();
         }
-        else if (Input.GetKeyUp(KeyCode.F2))
-        {
-            SetWeapon(WeaponType.RocketLauncher);
-            Debug.Log("f2");
-        }
-        else if (Input.GetKeyUp(KeyCode.F3))
-        {
-            SetWeapon(WeaponType.SMG); Debug.Log("f3");
-        }
-        else if (Input.GetKeyUp(KeyCode.F4))
-        {
-            SetWeapon(WeaponType.Rifle);
-        }
-        else if (Input.GetKeyUp(KeyCode.F5))
-        {
-            SetWeapon(WeaponType.Bow);
-        }
-        else if (Input.GetKeyUp(KeyCode.F6))
-        {
-            SetWeapon(WeaponType.ThrowingStars);
-        }
-        else if (Input.GetKeyUp(KeyCode.F7))
-        {
-            SetWeapon(WeaponType.Revolver);
-        }
-
+      
     }
 
 
-    //무기 이미지 업데이트
-    //public void SetWeapon()
-    //{
-    //    Debug.Log("무기이미지");
-    //    weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
-    //    canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
-    //}
+    public void SetWeapon()
+    {
+        Debug.Log(weapon);
+        if (spriteArray.Length > 0)
+        {
+            weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
+            canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
+        }
+    }
 
 
 
