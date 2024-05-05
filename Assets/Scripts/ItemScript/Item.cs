@@ -9,21 +9,29 @@ public class Item : MonoBehaviour,IHitAble
 
     private WeaponType weaponType;
     public GameObject BoxParticle;
+
     private TMP_Text BoxHpText;
+    private TMP_Text BoxWeaponText;
+    private TMP_Text BoxPowerUpText;
+    private TMP_Text BoxAddPlayerText;
 
     private int BoxHp;
+    private int PlayerCount;
     public float BoxSpeed;
     private bool isMove;
+    private bool isWeapon = false;
+    private bool isPowerUp = false;
 
 
     private void OnEnable()
     {
         isMove = true;
 
-        BoxHp = (int)Random.Range(1, 10);
+        BoxHp = Random.Range(1, 10);
+        PlayerCount = Random.Range(1, 10);
+
         BoxHpText.text = BoxHp.ToString();
         StartCoroutine(ReturnTimer());
-        
     }
 
     private void Awake()
@@ -34,6 +42,13 @@ public class Item : MonoBehaviour,IHitAble
     private void FixedUpdate()
     {
         Move();
+    }
+
+    public void SetItem(bool isWeapon,bool isPowerUp, WeaponType weapon = WeaponType.Revolver)
+    {
+        this.isWeapon = isWeapon;
+        this.isPowerUp = isPowerUp;
+        this.weaponType = weapon;
     }
 
     private void Move()
@@ -53,7 +68,21 @@ public class Item : MonoBehaviour,IHitAble
 
         if(BoxHp <= 0)
         {
-            WeaponManager.Instance.SetWeapon(DropWeapon());
+            if (isWeapon)
+            {
+                WeaponManager.Instance.SetWeapon(weaponType);
+                isWeapon = false;
+            }
+            else if (isPowerUp)
+            {
+                //파워업 처리
+                isPowerUp = false;  
+            }
+            else
+            {
+                //플레이어 증가 처리
+            }
+
             Instantiate(BoxParticle,transform.position, Quaternion.identity);               
             ReturnBox();
         }
@@ -70,43 +99,52 @@ public class Item : MonoBehaviour,IHitAble
         ReturnBox();
     }
 
-
-    public WeaponType DropWeapon()
+    private void PowerUp()
     {
-        int RandomSelect = Random.Range(1, 7);
 
-        switch(RandomSelect)
-        {
-            case 1:
-                weaponType = WeaponType.Revolver;
-                break;
-            case 2:
-                weaponType = WeaponType.MachineGun;
-                break;
-            case 3:
-                weaponType = WeaponType.RocketLauncher;
-                break;
-            case 4:
-                weaponType = WeaponType.SMG;
-                break;
-            case 5:
-                weaponType = WeaponType.Rifle;
-                break;
-            case 6:
-                weaponType = WeaponType.Bow;
-                break;
-            case 7:
-                weaponType = WeaponType.ThrowingStars;
-                break;
-        }
-
-        return weaponType;
     }
+
+    private void AddPlayer()
+    {
+
+    }
+
+
+    //public WeaponType DropWeapon()
+    //{
+    //    int RandomSelect = Random.Range(1, 7);
+
+    //    switch(RandomSelect)
+    //    {
+    //        case 1:
+    //            weaponType = WeaponType.Revolver;
+    //            break;
+    //        case 2:
+    //            weaponType = WeaponType.MachineGun;
+    //            break;
+    //        case 3:
+    //            weaponType = WeaponType.RocketLauncher;
+    //            break;
+    //        case 4:
+    //            weaponType = WeaponType.SMG;
+    //            break;
+    //        case 5:
+    //            weaponType = WeaponType.Rifle;
+    //            break;
+    //        case 6:
+    //            weaponType = WeaponType.Bow;
+    //            break;
+    //        case 7:
+    //            weaponType = WeaponType.ThrowingStars;
+    //            break;
+    //    }
+
+    //    return weaponType;
+    //}
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //�÷��̾�� ���ظ� ������.
             Instantiate(BoxParticle, transform.position, Quaternion.identity);
             ReturnBox();
         }
