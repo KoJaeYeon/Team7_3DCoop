@@ -32,8 +32,6 @@ public class Enemy : MonoBehaviour, IHitAble
 
         MovePos = transform.forward;
         EnemyAnimator.SetFloat("Run", 1f);
-
-        
     }
 
     private void OnEnable()
@@ -83,21 +81,10 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            EnemyAnimator.SetBool("Attack", true);
-            EnemyAnimator.SetFloat("Run", 0f);
+            ReturnEnemy();
         } 
        
     }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            EnemyAnimator.SetBool("Attack", false);
-            EnemyAnimator.SetFloat("Run", 1f);
-        }
-    }
-
     public void Damaged(float damage)
     {
         EnemyHp -= damage;

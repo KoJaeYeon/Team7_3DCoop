@@ -83,7 +83,7 @@ public class Item : MonoBehaviour,IHitAble
                 //플레이어 증가 처리
             }
 
-            Instantiate(BoxParticle,transform.position, Quaternion.identity);               
+            Instantiate(BoxParticle,transform.position, Quaternion.identity);
             ReturnBox();
         }
     }
