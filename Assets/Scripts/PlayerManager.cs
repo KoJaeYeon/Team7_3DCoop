@@ -69,7 +69,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
         if(playerCount == 0)
         {
-            Debug.Log("게임종료");
+            GameManager.Instance.GameOver();
         }
     }
 
