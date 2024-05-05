@@ -1515,7 +1515,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -2782,7 +2781,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3005,7 +3003,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3564,7 +3561,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 852566453}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3808,7 +3804,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 204055320}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3992,7 +3987,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 557347480}
@@ -4054,7 +4048,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -4271,7 +4264,6 @@ MonoBehaviour:
   Sound: {fileID: 1528582568}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -4575,7 +4567,7 @@ MonoBehaviour:
   - {fileID: 2044539019}
   - {fileID: 1318573722}
   - {fileID: 48161726}
-  playerTrans: {fileID: 0}
+  playerTrans: {fileID: 1353266352}
   itemSpawnTimer: 5
   enemySpawnTimer: 1.5
   spawnSpeedMultiflier: 1
@@ -5026,7 +5018,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -5449,7 +5440,7 @@ Transform:
   - {fileID: 1334280967}
   - {fileID: 442680781}
   m_Father: {fileID: 1353266352}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1380609329
 GameObject:
@@ -5543,7 +5534,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 1416881220}
   canvasImage: {fileID: 1416881223}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -5952,7 +5942,6 @@ MonoBehaviour:
   Sound: {fileID: 1528582568}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -6108,7 +6097,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 2050180036}
   canvasImage: {fileID: 2050180038}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -6229,7 +6217,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1892298736}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -6593,7 +6580,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 1686650643}
   canvasImage: {fileID: 1686650646}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -6925,7 +6911,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1817262440}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -7395,7 +7380,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1892298736}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
