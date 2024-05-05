@@ -9,12 +9,12 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;
+    private float TargetDistance = 20.0f;
     private int EnemyScore;
 
     private bool isMove = true;
 
-    public Transform PlayerTransform;    
+       
     private Rigidbody EnemyRigidbody;
     private Animator EnemyAnimator;
     private CapsuleCollider EnemyCollider;
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private Vector3 MovePos;
     private Vector3 TargetPos;
 
-    
+    public Vector3 PlayerPos;
 
     private void Awake()
     {
@@ -68,12 +68,14 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void Target()
     {
-        if (PlayerTransform == null)
+        PlayerPos = PlayerManager.Instance.GetPlayerPos();
+
+        if (PlayerPos == null)
             return;
 
-        if (Vector3.Distance(PlayerTransform.position, transform.position) < TargetDistance)
+        if (Vector3.Distance(PlayerPos, transform.position) < TargetDistance)
         {
-            TargetPos = (PlayerTransform.position - transform.position).normalized;
+            TargetPos = (PlayerPos - transform.position).normalized;
 
             float targetAngle = Mathf.Atan2(TargetPos.x, TargetPos.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -84,7 +86,7 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerDead"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
