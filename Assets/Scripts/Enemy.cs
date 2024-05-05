@@ -83,13 +83,15 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerDead"))
         {
             PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
-        } 
-       
+        }
+
     }
+
+
     public void Damaged(float damage)
     {
         EnemyHp -= damage;
