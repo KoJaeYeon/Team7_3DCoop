@@ -57,7 +57,7 @@ public class SpawnManager : Singleton<SpawnManager>
             {
                 if (exceptNum == i) continue;
                 GameObject itemBoxPrefab = PoolManager.Instance.GetItemBox();
-                itemBoxPrefab.transform.position = itemSpawnTrans[Random.Range(0, 3)].position;
+                itemBoxPrefab.transform.position = itemSpawnTrans[i].position;
                 Item item = itemBoxPrefab.GetComponent<Item>();
                 item.SetBoxHp(Random.Range(1 * gameLevel, 10 * gameLevel));
                 SetItem(item);

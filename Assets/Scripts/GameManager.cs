@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class GameManager : Singleton<GameManager>
 {
     private float currentTime = 0f;
-    private float timerDuration = 60f;
+    private float timerDuration = 10;
     private int gameLevel = 1;
     public static float score = 0;
     public static float scoreMultiplier = 1f;
