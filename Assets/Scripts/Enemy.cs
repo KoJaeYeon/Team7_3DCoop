@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;
+    private float TargetDistance = 20.0f;
     private int EnemyScore;
 
     private bool isMove = true;
@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("PlayerDead"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
