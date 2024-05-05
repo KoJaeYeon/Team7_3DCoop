@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -710,7 +710,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -1717,7 +1716,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 319922479}
   canvasImage: {fileID: 319922482}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -1952,7 +1950,6 @@ MonoBehaviour:
   Sound: {fileID: 381479788}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -2107,7 +2104,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 429406146}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -2369,7 +2365,7 @@ Transform:
   - {fileID: 1738746475}
   - {fileID: 1911225101}
   m_Father: {fileID: 246528299}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500223073
 GameObject:
@@ -2710,7 +2706,7 @@ Transform:
   - {fileID: 2103193266}
   - {fileID: 1401083349}
   m_Father: {fileID: 477240918}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &535635748
 MonoBehaviour:
@@ -3134,7 +3130,7 @@ Transform:
   - {fileID: 642677324}
   - {fileID: 2089558772}
   m_Father: {fileID: 1948173561}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &638911912
 MonoBehaviour:
@@ -3475,7 +3471,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3704,7 +3699,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -3856,7 +3850,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 1982726269}
@@ -4226,7 +4219,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 828853996}
   canvasImage: {fileID: 828853999}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -4831,7 +4823,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -5587,7 +5578,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1172375596}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -5733,7 +5723,7 @@ Transform:
   - {fileID: 58658216}
   - {fileID: 485155644}
   m_Father: {fileID: 1306663135}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1192120485
 MonoBehaviour:
@@ -6509,7 +6499,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1931202523}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -6898,7 +6887,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 1524575517}
   canvasImage: {fileID: 1524575519}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -7431,7 +7419,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 1892406819}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -8087,7 +8074,6 @@ MonoBehaviour:
   Sound: {fileID: 381479788}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -8580,7 +8566,7 @@ Transform:
   - {fileID: 1159159785}
   - {fileID: 2052146230}
   m_Father: {fileID: 1217899297}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609934019
 MonoBehaviour:
@@ -9094,7 +9080,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -9807,7 +9792,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1920167103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10090,7 +10075,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1931202523}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
