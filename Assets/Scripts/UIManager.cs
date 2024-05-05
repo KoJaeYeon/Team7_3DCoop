@@ -9,6 +9,12 @@ public class UIManager : MonoBehaviour
     public GameObject Sound;
     public GameObject Music;
     public GameObject SrStart;
+
+    public GameObject Weapon;
+    public Image canvasImage; 
+    public Sprite[] spriteArray; 
+    private int ImageIndex = 0; 
+
     Slider slider1;
     Slider slider2;
  
@@ -69,5 +75,17 @@ public class UIManager : MonoBehaviour
         Music.SetActive(false);
         slider2.value = 1;
     }
+
+
+    public void SetWeapon(WeaponType weaponType)
+    {
+        Debug.Log(weaponType);
+        Weapon.SetActive(true);
+        ImageIndex = (int)weaponType; // 무기 유형에 해당하는 스프라이트 인덱스 계산
+        canvasImage.sprite = spriteArray[ImageIndex]; // 현재 스프라이트로 이미지
+
+
+    }
+
 
 }
