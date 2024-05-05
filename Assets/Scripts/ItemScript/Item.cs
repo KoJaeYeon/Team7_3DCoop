@@ -16,6 +16,7 @@ public class Item : MonoBehaviour,IHitAble
     private TMP_Text BoxAddPlayerText;
 
     private int BoxHp;
+    private int PlayerCount;
     public float BoxSpeed;
     private bool isMove;
     private bool isWeapon = false;
@@ -26,9 +27,10 @@ public class Item : MonoBehaviour,IHitAble
     {
         isMove = true;
 
-        BoxHp = (int)Random.Range(1, 10);
-        BoxHpText.text = BoxHp.ToString();
+        BoxHp = Random.Range(1, 10);
+        PlayerCount = Random.Range(1, 10);
 
+        BoxHpText.text = BoxHp.ToString();
         StartCoroutine(ReturnTimer());
     }
 
