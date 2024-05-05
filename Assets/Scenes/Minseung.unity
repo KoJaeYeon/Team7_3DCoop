@@ -2202,6 +2202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhillieSuit_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5179,6 +5183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhillieSuit_01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6289,8 +6297,6 @@ MonoBehaviour:
   - {fileID: 1254465875}
   - {fileID: 1099162328}
   - {fileID: 1584031507}
-  playerCount: 1
-  playerCountMax: 5
   positionOffset:
   - {x: 0, y: 0, z: 0}
   - {x: -0.75, y: 0, z: 0}
@@ -8700,6 +8706,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhillieSuit_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10283,6 +10293,10 @@ PrefabInstance:
     - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_Name
       value: GhillieSuit_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497507383330918, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4510079717560118, guid: b6dd7aa0471525a4ba150a6dd06fc4b4, type: 3}
       propertyPath: m_RootOrder
