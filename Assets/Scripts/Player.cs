@@ -6,10 +6,16 @@ public class Player : MonoBehaviour
 {
     public GameObject[] playerPrefabs;
     
-    public int playerCount = 1;
-    public int playerCountMax = 5;
+    public static int playerCount = 1;
+    public static int playerCountMax = 5;
 
     public Vector3[] positionOffset;
+
+    private void Awake()
+    {
+        playerCount = 1;
+        playerCountMax = 5;
+    }
 
     private void Start()
     {
