@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Sword
+  - Enemy
+  - DeadZone
+
   layers:
   - Default
   - TransparentFX

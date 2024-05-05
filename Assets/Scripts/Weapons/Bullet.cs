@@ -9,8 +9,6 @@ public class Bullet : MonoBehaviour
     private int piercing = 1;
     private float radius = 0f;
     private bool explodeActive = false;
-
-
     public void InitBullet()
     {
         attackDamage = 1f;
@@ -21,12 +19,11 @@ public class Bullet : MonoBehaviour
 
     public void SetBullet(float attackDamage, int piercing, float radus, bool explodeActive)
     {
-        this.attackDamage = attackDamage;
+        this.attackDamage = attackDamage * WeaponManager.Instance.damageMultiplier;
         this.piercing = piercing;
         this.radius = radus;
         this.explodeActive = explodeActive;
     }
-
     private void OnTriggerEnter(Collider other)
     {
         IHitAble hitAble = other.GetComponent<IHitAble>();
@@ -56,6 +53,13 @@ public class Bullet : MonoBehaviour
                 }
             }
 
+        }
+        else
+        {
+            if(other.CompareTag("DeadZone"))
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
