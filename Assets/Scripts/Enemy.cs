@@ -29,14 +29,18 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody = GetComponent<Rigidbody>();
         EnemyAnimator = GetComponent<Animator>();
         EnemyCollider = GetComponent<CapsuleCollider>();
-
-        MovePos = transform.forward;
-        EnemyAnimator.SetFloat("Run", 1f);
     }
 
     private void OnEnable()
     {
         isMove = true;
+        MovePos = transform.forward;
+        EnemyAnimator.SetFloat("Run", 1f);
+    }
+
+    public void SetHp(float Hp)
+    {
+        EnemyHp = Hp;   
     }
 
 
