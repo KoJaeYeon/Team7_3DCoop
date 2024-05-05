@@ -26,12 +26,25 @@ public class Item : MonoBehaviour,IHitAble
     private void OnEnable()
     {
         isMove = true;
-
-        BoxHp = Random.Range(1, 10);
-        PlayerCount = Random.Range(1, 10);
+        PlayerCount = Random.Range(1, 10);        
 
         BoxHpText.text = BoxHp.ToString();
         StartCoroutine(ReturnTimer());
+    }
+
+    public void SetBoxHp(int Hp)
+    {
+        BoxHp = Hp;
+        #region 체력바 수정
+        BoxHpText.text = BoxHp.ToString();
+        #endregion
+    }
+
+    public void SetItem(bool isWeapon, bool isPowerUp, WeaponType weapon = WeaponType.Revolver)
+    {
+        this.isWeapon = isWeapon;
+        this.isPowerUp = isPowerUp;
+        this.weaponType = weapon;
     }
 
     private void Awake()
@@ -42,13 +55,6 @@ public class Item : MonoBehaviour,IHitAble
     private void FixedUpdate()
     {
         Move();
-    }
-
-    public void SetItem(bool isWeapon,bool isPowerUp, WeaponType weapon = WeaponType.Revolver)
-    {
-        this.isWeapon = isWeapon;
-        this.isPowerUp = isPowerUp;
-        this.weaponType = weapon;
     }
 
     private void Move()
