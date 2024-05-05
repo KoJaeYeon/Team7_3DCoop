@@ -8661,7 +8661,7 @@ MonoBehaviour:
   - {fileID: 2098202097}
   playerTrans: {fileID: 1306166437}
   itemSpawnTimer: 5
-  enemySpawnTimer: 3
+  enemySpawnTimer: 1.5
   spawnSpeedMultiflier: 1
 --- !u!1 &2067048278
 GameObject:
