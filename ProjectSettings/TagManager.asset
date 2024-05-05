@@ -7,6 +7,7 @@ TagManager:
   - Sword
   - Enemy
   - DeadZone
+  - PlayerDead
   layers:
   - Default
   - TransparentFX

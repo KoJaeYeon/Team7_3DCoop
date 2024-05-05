@@ -9,8 +9,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;
-    private int EnemyAtk = 10;
+    private float TargetDistance = 10.0f;   
 
     private bool isMove = true;
 
@@ -36,6 +35,7 @@ public class Enemy : MonoBehaviour, IHitAble
         isMove = true;
         MovePos = transform.forward;
         EnemyAnimator.SetFloat("Run", 1f);
+        StartCoroutine(ReturnTimer());
     }
 
     public void SetHp(float Hp)
@@ -83,12 +83,15 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerDead"))
         {
+            PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
-        } 
-       
+        }
+
     }
+
+
     public void Damaged(float damage)
     {
         EnemyHp -= damage;
@@ -108,8 +111,16 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
+        //몬스터가 죽으면 Score ++ 추가예정
+
         yield return new WaitForSeconds(1.5f);
 
+        ReturnEnemy();
+    }
+
+    private IEnumerator ReturnTimer()
+    {
+        yield return new WaitForSeconds(20.0f);
         ReturnEnemy();
     }
 
