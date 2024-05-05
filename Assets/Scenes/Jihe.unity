@@ -183,6 +183,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &4350469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +340,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &17593101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,6 +501,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
   - {fileID: 21300000, guid: f604129b3aaca88479828a1a2f0259c9, type: 3}
   - {fileID: 21300000, guid: e5e3d5bed5ec50f47a72459c2e1c1985, type: 3}
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &66590775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1121,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &262411618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1769,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &415229807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1915,6 +1925,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &419369178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,8 +2118,9 @@ RectTransform:
   - {fileID: 325432573}
   - {fileID: 782348010}
   - {fileID: 765324518}
-  - {fileID: 1204737853}
   - {fileID: 1760379247}
+  - {fileID: 1204737853}
+  - {fileID: 2117619318}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2175,6 +2188,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &493533278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2764,6 +2779,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &648422732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,7 +3209,7 @@ GameObject:
   - component: {fileID: 782348012}
   - component: {fileID: 782348011}
   m_Layer: 5
-  m_Name: Time
+  m_Name: TimeT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3628,6 +3645,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &920170985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4489,6 +4508,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
   - {fileID: 21300000, guid: f604129b3aaca88479828a1a2f0259c9, type: 3}
   - {fileID: 21300000, guid: e5e3d5bed5ec50f47a72459c2e1c1985, type: 3}
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!1 &1204737852
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,7 +4542,7 @@ RectTransform:
   m_Children:
   - {fileID: 1558121587}
   m_Father: {fileID: 487023819}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4626,6 +4647,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &1211839756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,6 +4808,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
   - {fileID: 21300000, guid: f604129b3aaca88479828a1a2f0259c9, type: 3}
   - {fileID: 21300000, guid: e5e3d5bed5ec50f47a72459c2e1c1985, type: 3}
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &1242632348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5284,6 +5309,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &1364750467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6216,6 +6243,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &1566916978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6645,7 +6674,7 @@ RectTransform:
   - {fileID: 1756147935}
   - {fileID: 763731225}
   m_Father: {fileID: 487023819}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7553,6 +7582,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059910441}
   m_CullTransparentMesh: 1
+--- !u!1 &2117619317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117619318}
+  - component: {fileID: 2117619319}
+  m_Layer: 5
+  m_Name: Timescript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2117619318
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117619317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 487023819}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2117619319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117619317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setting: {fileID: 0}
+  Sound: {fileID: 0}
+  Music: {fileID: 0}
+  SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
+  timetext: {fileID: 782348011}
+  scoretext: {fileID: 325432574}
 --- !u!1 &2132544735
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,6 +7776,8 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
+  timetext: {fileID: 0}
+  scoretext: {fileID: 0}
 --- !u!114 &2134785725
 MonoBehaviour:
   m_ObjectHideFlags: 0
