@@ -84,19 +84,22 @@ public class Enemy : MonoBehaviour, IHitAble
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerDead"))
         {
             PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
-        } 
-       
+        }
+
     }
+
 
     private void Score()
     {
         EnemyScore = GameManager.Instance.GetGameLevel() * 10;
         //GameManager.Instance.ScoreUp(EnemyScore);
     }
+
+
 
     public void Damaged(float damage)
     {
@@ -117,7 +120,7 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
-        //¸ó½ºÅÍ°¡ Á×À¸¸é Score ++ Ãß°¡¿¹Á¤
+        //ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Score ++ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½
         Score();
 
         yield return new WaitForSeconds(1.5f);
