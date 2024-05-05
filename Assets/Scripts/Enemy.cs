@@ -9,8 +9,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;
-    private int EnemyAtk = 10;
+    private float TargetDistance = 10.0f;   
 
     private bool isMove = true;
 
@@ -85,6 +84,7 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
         } 
        
@@ -108,7 +108,7 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
-
+        //몬스터가 죽으면 Score ++ 추가예정
 
         yield return new WaitForSeconds(1.5f);
 

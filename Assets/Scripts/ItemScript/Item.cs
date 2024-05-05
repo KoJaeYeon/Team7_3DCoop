@@ -16,7 +16,6 @@ public class Item : MonoBehaviour,IHitAble
     private TMP_Text BoxAddPlayerText;
 
     private int BoxHp;
-    private int PlayerCount;
     public float BoxSpeed;
     private bool isMove;
     private bool isWeapon = false;
@@ -26,7 +25,6 @@ public class Item : MonoBehaviour,IHitAble
     private void OnEnable()
     {
         isMove = true;
-        PlayerCount = Random.Range(1, 10);        
 
         BoxHpText.text = BoxHp.ToString();
         StartCoroutine(ReturnTimer());
@@ -71,8 +69,11 @@ public class Item : MonoBehaviour,IHitAble
 
         if(BoxHp <= 0)
         {
+            isMove = false;
+
             if (isWeapon)
             {
+                //아이템 변경
                 WeaponManager.Instance.SetWeapon(weaponType);
                 isWeapon = false;
             }
@@ -80,12 +81,14 @@ public class Item : MonoBehaviour,IHitAble
             {
                 //파워업 처리
                 WeaponManager.Instance.PowerUP();
-                isPowerUp = false;  
+                isPowerUp = false;
             }
             else
             {
-                //플레이어 증가 처리
+                //플레이어 증가
+                PlayerManager.Instance.PlayerPlus();
             }
+
 
             Instantiate(BoxParticle,transform.position, Quaternion.identity);
             ReturnBox();
@@ -102,6 +105,21 @@ public class Item : MonoBehaviour,IHitAble
         yield return new WaitForSeconds(20.0f);
         ReturnBox();
     }
+
+    //private IEnumerator WeaponText()
+    //{
+
+    //}
+
+    //private IEnumerator PowerUpText()
+    //{
+
+    //}
+
+    //private IEnumerator AddPlayerText()
+    //{
+
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {
