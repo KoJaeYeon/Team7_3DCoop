@@ -16,7 +16,6 @@ public class Item : MonoBehaviour,IHitAble
     private TMP_Text BoxAddPlayerText;
 
     private int BoxHp;
-    private int PlayerCount;
     public float BoxSpeed;
     private bool isMove;
     private bool isWeapon = false;
@@ -26,7 +25,6 @@ public class Item : MonoBehaviour,IHitAble
     private void OnEnable()
     {
         isMove = true;
-        PlayerCount = Random.Range(1, 10);        
 
         BoxHpText.text = BoxHp.ToString();
         StartCoroutine(ReturnTimer());
@@ -74,20 +72,26 @@ public class Item : MonoBehaviour,IHitAble
 
         if(BoxHp <= 0)
         {
+            isMove = false;
+
             if (isWeapon)
             {
+                //아이템 변경
                 WeaponManager.Instance.SetWeapon(weaponType);
                 isWeapon = false;
             }
             else if (isPowerUp)
             {
                 //파워업 처리
-                isPowerUp = false;  
+                WeaponManager.Instance.PowerUP();
+                isPowerUp = false;
             }
             else
             {
-                //플레이어 증가 처리
+                //플레이어 증가
+                PlayerManager.Instance.PlayerPlus();
             }
+
 
             Instantiate(BoxParticle,transform.position, Quaternion.identity);
             ReturnBox();
@@ -105,48 +109,21 @@ public class Item : MonoBehaviour,IHitAble
         ReturnBox();
     }
 
-    private void PowerUp()
-    {
-
-    }
-
-    private void AddPlayer()
-    {
-
-    }
-
-
-    //public WeaponType DropWeapon()
+    //private IEnumerator WeaponText()
     //{
-    //    int RandomSelect = Random.Range(1, 7);
 
-    //    switch(RandomSelect)
-    //    {
-    //        case 1:
-    //            weaponType = WeaponType.Revolver;
-    //            break;
-    //        case 2:
-    //            weaponType = WeaponType.MachineGun;
-    //            break;
-    //        case 3:
-    //            weaponType = WeaponType.RocketLauncher;
-    //            break;
-    //        case 4:
-    //            weaponType = WeaponType.SMG;
-    //            break;
-    //        case 5:
-    //            weaponType = WeaponType.Rifle;
-    //            break;
-    //        case 6:
-    //            weaponType = WeaponType.Bow;
-    //            break;
-    //        case 7:
-    //            weaponType = WeaponType.ThrowingStars;
-    //            break;
-    //    }
-
-    //    return weaponType;
     //}
+
+    //private IEnumerator PowerUpText()
+    //{
+
+    //}
+
+    //private IEnumerator AddPlayerText()
+    //{
+
+    //}
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
