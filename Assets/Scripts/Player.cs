@@ -41,8 +41,6 @@ public class Player : MonoBehaviour
 
             playerPrefabs[playerCount - 1].transform.position = newPosition;
             playerPrefabs[playerCount - 1].gameObject.SetActive(true);
-
-            Debug.Log($"{playerCount}, {playerPrefabs[playerCount - 1].name}");
         }
 
         else
@@ -53,7 +51,17 @@ public class Player : MonoBehaviour
 
     private void PlayerMinus()
     {
+        if(playerCount > 0)
+        {
+            playerCount--;
 
+            playerPrefabs[playerCount].gameObject.SetActive(false);
+        }
+
+        if(playerCount == 0)
+        {
+            Debug.Log("게임종료");
+        }
     }
 
     private void DeactivePlayer()
@@ -72,6 +80,11 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayerPlus();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            PlayerMinus();
         }
     }
 }
