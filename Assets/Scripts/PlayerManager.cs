@@ -96,4 +96,9 @@ public class PlayerManager : Singleton<PlayerManager>
             PlayerMinus();
         }
     }
+
+    public Vector3 GetPlayerPos()
+    {
+        return transform.position;
+    }
 }
