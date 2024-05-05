@@ -123,7 +123,6 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
-        //���Ͱ� ������ Score ++ �߰�����
         Score();
 
         yield return new WaitForSeconds(1.5f);
