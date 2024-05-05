@@ -102,4 +102,10 @@ public class SpawnManager : Singleton<SpawnManager>
         enemy.SetHp(enemyHelath);
     }
 
+    public WeaponType WeaponRand()
+    {
+        WeaponType weaponType = WeaponType.Revolver;
+        return weaponType;
+    }
+
 }
