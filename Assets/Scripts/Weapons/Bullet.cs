@@ -41,6 +41,10 @@ public class Bullet : MonoBehaviour
             else // Æø¹ßÇü
             {
                 Collider[] bombColliders = Physics.OverlapSphere(other.transform.position, radius, LayerMask.GetMask("EnemyTarget"));
+                foreach (Collider bomb in bombColliders)
+                {
+                    Debug.Log(bomb.name);
+                }
                 for (int i = 0; i < bombColliders.Length; i++)
                 {
                     hitAble = bombColliders[i].GetComponent<IHitAble>();
