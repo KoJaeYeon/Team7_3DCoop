@@ -12,6 +12,8 @@ public class SpawnManager : Singleton<SpawnManager>
 
     private float enemyHelath = 1f;
 
+    private int gameLevel;
+
 
     private void Start()
     {
@@ -55,11 +57,12 @@ public class SpawnManager : Singleton<SpawnManager>
         }
     }
 
-    public void UpdateLevel()
+    public void UpdateLevel(int level)
     {
         spawnSpeedMultiflier *= 0.9f;
         enemyHelath += 0.5f;
         enemyHelath *= 1.05f;
+        gameLevel = level;
     }
 
     public void SpawnEnemyPoint()
@@ -70,6 +73,7 @@ public class SpawnManager : Singleton<SpawnManager>
         prefab.transform.eulerAngles = new Vector3(0,-180,0);
         Enemy enemy = prefab.GetComponent<Enemy>();
         enemy.PlayerTransform = playerTrans;
+        enemy.EnemyHp = enemyHelath;
     }
 
 }
