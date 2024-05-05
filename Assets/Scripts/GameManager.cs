@@ -47,4 +47,9 @@ public class GameManager : Singleton<GameManager>
 
         Debug.Log($"{gameLevel}, {scoreMultiplier}");
     }
+
+    public int GetGameLevel()
+    {
+        return gameLevel;
+    }
 }
