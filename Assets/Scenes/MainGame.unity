@@ -6441,7 +6441,7 @@ MonoBehaviour:
   - {fileID: 1422779808141365776, guid: 204528d973aab8c4c9791e503feb8abb, type: 3}
   - {fileID: 7754551878005123811, guid: a7a6a6c49003f8b429a556a244836f15, type: 3}
   enemyPrefab: {fileID: 1088474434442572, guid: ebf2cc118768d314988702254deb07a7, type: 3}
-  itemBoxPrefab: {fileID: 1808195246080866, guid: c4a818e510e208348b971b6ca3b27439, type: 3}
+  itemBoxPrefab: {fileID: 6728029978857313556, guid: c234ea103a7178c4196b700a13fa4803, type: 3}
   particlePrefab: {fileID: 1804206099813350, guid: b9d549f7a69390a4fb73de6f46bcebca, type: 3}
   bulletTrans:
   - {fileID: 99053413}
