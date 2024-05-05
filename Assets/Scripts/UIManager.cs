@@ -5,34 +5,35 @@ using System.Collections;
 using TMPro;
 
 
-
-
 public class UIManager : MonoBehaviour
 {
-    
+    [Header("Gameobject")]
     public GameObject setting;
     public GameObject Sound;
     public GameObject Music;
     public GameObject SrStart;
 
-    public GameObject Weapon;
-    public Image canvasImage; 
-    public Sprite[] spriteArray; 
-    private int ImageIndex = 0; 
+    [Header("Weaponimage")]
+    private WeaponType weapon;
+    public Image canvasImage;
+    public Sprite[] spriteArray;
 
+    [Header("Slider")]
     Slider slider1;
     Slider slider2;
 
+    [Header("Text")]
     public TMP_Text timetext;
     public TMP_Text scoretext;
 
+    [Header("Time")]
     private float time = 0;
     private int hour;
     private int minute;
     private int second;
     private bool isTime = false;
- 
-    
+
+
 
     private void Awake()
     {
@@ -42,9 +43,91 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(TimeCount(time));
 
+        SetWeapon(WeaponManager.Instance.weaponType);
+
         setting.SetActive(false);
 
     }
+
+    public void SetWeapon(WeaponType weaponType)
+    {
+        Debug.Log($"JiheWeapon : {weaponType}");
+        weapon = weaponType;
+
+
+        switch (weaponType)
+        {
+            case WeaponType.Revolver:
+                canvasImage.sprite = spriteArray[0];
+
+                break;
+            case WeaponType.MachineGun:
+                canvasImage.sprite = spriteArray[1];
+                break;
+            case WeaponType.RocketLauncher:
+                canvasImage.sprite = spriteArray[2];
+                break;
+            case WeaponType.SMG:
+                canvasImage.sprite = spriteArray[3];
+                break;
+            case WeaponType.Rifle:
+                canvasImage.sprite = spriteArray[4];
+                break;
+            case WeaponType.Bow:
+                canvasImage.sprite = spriteArray[5];
+                break;
+            case WeaponType.ThrowingStars:
+                canvasImage.sprite = spriteArray[6];
+                break;
+        }
+
+        
+    }
+    private void Update()
+    {
+        
+        if (Input.GetKeyUp(KeyCode.F1))
+        {
+            SetWeapon(WeaponType.MachineGun);
+            Debug.Log("f1");
+        }
+        else if (Input.GetKeyUp(KeyCode.F2))
+        {
+            SetWeapon(WeaponType.RocketLauncher);
+            Debug.Log("f2");
+        }
+        else if (Input.GetKeyUp(KeyCode.F3))
+        {
+            SetWeapon(WeaponType.SMG); Debug.Log("f3");
+        }
+        else if (Input.GetKeyUp(KeyCode.F4))
+        {
+            SetWeapon(WeaponType.Rifle);
+        }
+        else if (Input.GetKeyUp(KeyCode.F5))
+        {
+            SetWeapon(WeaponType.Bow);
+        }
+        else if (Input.GetKeyUp(KeyCode.F6))
+        {
+            SetWeapon(WeaponType.ThrowingStars);
+        }
+        else if (Input.GetKeyUp(KeyCode.F7))
+        {
+            SetWeapon(WeaponType.Revolver);
+        }
+
+    }
+
+
+    //무기 이미지 업데이트
+    //public void SetWeapon()
+    //{
+    //    Debug.Log("무기이미지");
+    //    weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
+    //    canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
+    //}
+
 
 
     //시작버튼
@@ -109,16 +192,7 @@ public class UIManager : MonoBehaviour
         slider2.value = 1;
     }
 
-
-    public void SetWeapon(WeaponType weaponType)
-    {
-        Debug.Log(weaponType);
-        Weapon.SetActive(true);
-        ImageIndex = (int)weaponType; // 무기 유형에 해당하는 스프라이트 인덱스 계산
-        canvasImage.sprite = spriteArray[ImageIndex]; // 현재 스프라이트로 이미지
-
-
-    }
+    
 
     IEnumerator TimeCount(float time)
     {
