@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Item : MonoBehaviour, IHitAble
@@ -11,12 +12,16 @@ public class Item : MonoBehaviour, IHitAble
 
     public TMP_Text BoxHpText;
     public TMP_Text BoxItemText;
+    public Sprite[] ItemSprite;
+    public Sprite[] WeaponSprite;
+    private Image BoxImage;
 
     private int BoxHp;
     public float BoxSpeed;
     private bool isMove;
     private bool isWeapon = false;
     private bool isPowerUp = false;
+    private bool isPlayer = false;
 
 
     private void OnEnable()
@@ -52,6 +57,30 @@ public class Item : MonoBehaviour, IHitAble
         this.isWeapon = isWeapon;
         this.isPowerUp = isPowerUp;
         this.weaponType = weapon;
+
+        if (!isWeapon && !isPowerUp)
+            isPlayer = true;
+
+        SetImage(isWeapon, isPowerUp, isPlayer, weapon);
+    }
+
+    private void SetImage(bool isWeapon, bool isPowerUp, bool isPlayer, WeaponType weapon)
+    {
+        if (isWeapon)
+        {
+            for(int i = 0; i < WeaponSprite.Length; i++)
+            {
+
+            }
+        }
+        else if(isPowerUp)
+        {
+            
+        }
+        else if(isPlayer)
+        {
+
+        }
     }
 
     private void FixedUpdate()
@@ -91,10 +120,10 @@ public class Item : MonoBehaviour, IHitAble
                 //파워업
                 WeaponManager.Instance.PowerUP();
             }
-            else
+            else if(isPlayer)
             {
                 //플레이어 증가
-                //PlayerManager.Instance.PlayerPlus();
+                PlayerManager.Instance.PlayerPlus();
             }
 
             Explosion();
@@ -132,9 +161,10 @@ public class Item : MonoBehaviour, IHitAble
             BoxItemText.text = "Power Up";
             isPowerUp = false;
         }
-        else
+        else if(isPlayer)
         {
             BoxItemText.text = "Player++";
+            isPlayer = false;
         }
 
         yield return new WaitForSeconds(1.5f);

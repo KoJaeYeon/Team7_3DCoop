@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour, IHitAble
     private float EnemyHp;
     private float EnemySpeed = 8.0f;
     private float EnemyMaxSpeed = 4.0f;
-    private float TargetDistance = 10.0f;   
+    private float TargetDistance = 10.0f;
+    private int EnemyScore;
 
     private bool isMove = true;
 
@@ -90,6 +91,13 @@ public class Enemy : MonoBehaviour, IHitAble
         } 
        
     }
+
+    private void Score()
+    {
+        EnemyScore = GameManager.Instance.GetGameLevel() * 10;
+        //GameManager.Instance.ScoreUp(EnemyScore);
+    }
+
     public void Damaged(float damage)
     {
         EnemyHp -= damage;
@@ -110,6 +118,7 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyCollider.enabled = false;
 
         //몬스터가 죽으면 Score ++ 추가예정
+        Score();
 
         yield return new WaitForSeconds(1.5f);
 
