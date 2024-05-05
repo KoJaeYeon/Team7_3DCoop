@@ -68,11 +68,11 @@ public class UIManager : MonoBehaviour
     public void SetWeapon()
     {
         Debug.Log(weapon);
-        if (spriteArray.Length > 0)
-        {
-            weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
-            canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
-        }
+        Debug.Log("spriteArray.Length : " + spriteArray.Length);
+       
+        weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
+        canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
+        
     }
 
 

@@ -408,7 +408,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 60431040}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -519,7 +518,6 @@ GameObject:
   - component: {fileID: 69335187}
   - component: {fileID: 69335186}
   - component: {fileID: 69335185}
-  - component: {fileID: 69335184}
   m_Layer: 5
   m_Name: MusicIcon X
   m_TagString: Untagged
@@ -549,27 +547,6 @@ RectTransform:
   m_AnchoredPosition: {x: -278.70004, y: 63.79999}
   m_SizeDelta: {x: 100.7, y: 9.6423}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &69335184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69335182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 0}
-  Music: {fileID: 69335182}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &69335185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,7 +591,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 69335184}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: MusicO
         m_Mode: 1
@@ -807,7 +784,7 @@ GameObject:
   - component: {fileID: 196478315}
   - component: {fileID: 196478314}
   m_Layer: 0
-  m_Name: Main Camera (1)
+  m_Name: 'Main Camera '
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1072,7 +1049,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 245089011}
   canvasImage: {fileID: 245089014}
   spriteArray:
   - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
@@ -1312,7 +1288,7 @@ Transform:
   - {fileID: 1389486733}
   - {fileID: 247861337}
   m_Father: {fileID: 199158490}
-  m_RootOrder: 22
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &311870953
 GameObject:
@@ -1365,7 +1341,6 @@ GameObject:
   - component: {fileID: 334192656}
   - component: {fileID: 334192655}
   - component: {fileID: 334192654}
-  - component: {fileID: 334192653}
   m_Layer: 5
   m_Name: SoundIcon X
   m_TagString: Untagged
@@ -1393,27 +1368,6 @@ RectTransform:
   m_AnchoredPosition: {x: -295.6001, y: 179.00003}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &334192653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 334192651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 334192651}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &334192654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,7 +1412,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 334192653}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SoundO
         m_Mode: 1
@@ -1797,7 +1751,7 @@ GameObject:
   - component: {fileID: 415724070}
   - component: {fileID: 415724069}
   m_Layer: 5
-  m_Name: UI (1)
+  m_Name: 'UI '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2270,7 +2224,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -2653,7 +2606,7 @@ GameObject:
   - component: {fileID: 800816908}
   - component: {fileID: 800816909}
   m_Layer: 5
-  m_Name: Timescript
+  m_Name: UIscript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2695,9 +2648,11 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
+  canvasImage: {fileID: 1858934733}
+  spriteArray:
+  - {fileID: 21300000, guid: 46a48b58b92609748a9ad3b51e80f889, type: 3}
+  - {fileID: 21300000, guid: 2da13245f74782647b98bf5144253062, type: 3}
+  - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
   timetext: {fileID: 1567323513}
   scoretext: {fileID: 1110465180}
 --- !u!1 &834922931
@@ -3359,7 +3314,6 @@ GameObject:
   - component: {fileID: 1041358016}
   - component: {fileID: 1041358015}
   - component: {fileID: 1041358014}
-  - component: {fileID: 1041358013}
   m_Layer: 5
   m_Name: WeaponInven
   m_TagString: Untagged
@@ -3388,34 +3342,6 @@ RectTransform:
   m_AnchoredPosition: {x: 212.10027, y: 3.1401367}
   m_SizeDelta: {x: 144, y: 143.181}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1041358013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041358011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 0}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 1858934731}
-  canvasImage: {fileID: 1858934733}
-  spriteArray:
-  - {fileID: 21300000, guid: b96e68863d85ff541af94a483ca51a77, type: 3}
-  - {fileID: 21300000, guid: 3f8f8ecb3615b524c99080c250a4f01c, type: 3}
-  - {fileID: 21300000, guid: 46a48b58b92609748a9ad3b51e80f889, type: 3}
-  - {fileID: 21300000, guid: 2da13245f74782647b98bf5144253062, type: 3}
-  - {fileID: 21300000, guid: 06ebb64ff07d2e84fb0e2785c40644f1, type: 3}
-  - {fileID: 21300000, guid: f604129b3aaca88479828a1a2f0259c9, type: 3}
-  - {fileID: 21300000, guid: e5e3d5bed5ec50f47a72459c2e1c1985, type: 3}
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1041358014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,7 +3407,6 @@ GameObject:
   - component: {fileID: 1069908590}
   - component: {fileID: 1069908589}
   - component: {fileID: 1069908588}
-  - component: {fileID: 1069908587}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -3509,27 +3434,6 @@ RectTransform:
   m_AnchoredPosition: {x: 27, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1069908587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069908585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 1421196864}
-  Sound: {fileID: 0}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1069908588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3574,7 +3478,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1069908587}
+      - m_Target: {fileID: 800816909}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SettingButton
         m_Mode: 1
@@ -3667,7 +3571,6 @@ GameObject:
   - component: {fileID: 1081357489}
   - component: {fileID: 1081357488}
   - component: {fileID: 1081357487}
-  - component: {fileID: 1081357486}
   m_Layer: 5
   m_Name: SoundIcon
   m_TagString: Untagged
@@ -3695,27 +3598,6 @@ RectTransform:
   m_AnchoredPosition: {x: -279, y: 179.00003}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1081357486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081357484}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 334192651}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1081357487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3760,7 +3642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1081357486}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: SoundX
         m_Mode: 1
@@ -4585,7 +4467,6 @@ GameObject:
   - component: {fileID: 1216874509}
   - component: {fileID: 1216874508}
   - component: {fileID: 1216874507}
-  - component: {fileID: 1216874506}
   m_Layer: 5
   m_Name: Bk
   m_TagString: Untagged
@@ -4614,27 +4495,6 @@ RectTransform:
   m_AnchoredPosition: {x: 275.00003, y: -157.00002}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1216874506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216874504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 1421196864}
-  Sound: {fileID: 0}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1216874507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4679,7 +4539,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1216874506}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: BkButton
         m_Mode: 1
@@ -4817,7 +4677,6 @@ GameObject:
   - component: {fileID: 1251549475}
   - component: {fileID: 1251549474}
   - component: {fileID: 1251549473}
-  - component: {fileID: 1251549472}
   m_Layer: 5
   m_Name: MusicIcon
   m_TagString: Untagged
@@ -4845,27 +4704,6 @@ RectTransform:
   m_AnchoredPosition: {x: -287.6, y: 56.7}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1251549472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251549470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 0}
-  Music: {fileID: 69335182}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1251549473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4910,7 +4748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 69335184}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: MusicX
         m_Mode: 1
@@ -6275,7 +6113,6 @@ GameObject:
   - component: {fileID: 1637570524}
   - component: {fileID: 1637570523}
   - component: {fileID: 1637570522}
-  - component: {fileID: 1637570521}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -6304,27 +6141,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000750256, y: -156.99998}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1637570521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637570519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 0}
-  Music: {fileID: 0}
-  SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1637570522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6369,9 +6185,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1637570521}
+      - m_Target: {fileID: 800816907}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: MainButton
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6555,7 +6371,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 1802918837}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
@@ -6664,7 +6479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840395405}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: 'Player '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6788,7 +6603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 46a48b58b92609748a9ad3b51e80f889, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7022,7 +6837,6 @@ GameObject:
   - component: {fileID: 1893053032}
   - component: {fileID: 1893053031}
   - component: {fileID: 1893053030}
-  - component: {fileID: 1893053029}
   m_Layer: 5
   m_Name: Re
   m_TagString: Untagged
@@ -7051,27 +6865,6 @@ RectTransform:
   m_AnchoredPosition: {x: -271.00012, y: -156.99998}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1893053029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893053027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d7f1e4d711f56041b058658e16241b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setting: {fileID: 0}
-  Sound: {fileID: 0}
-  Music: {fileID: 0}
-  SrStart: {fileID: 992771129}
-  Weapon: {fileID: 0}
-  canvasImage: {fileID: 0}
-  spriteArray: []
-  timetext: {fileID: 0}
-  scoretext: {fileID: 0}
 --- !u!114 &1893053030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7116,7 +6909,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1893053029}
+      - m_Target: {fileID: 800816909}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ReTurnButton
         m_Mode: 1
@@ -7223,7 +7016,6 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
-  Weapon: {fileID: 0}
   canvasImage: {fileID: 0}
   spriteArray: []
   timetext: {fileID: 0}
