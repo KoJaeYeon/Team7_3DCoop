@@ -338,6 +338,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 60339384}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &60339387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +491,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 83347076}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &83347079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +849,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 153635719}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &153635722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1168,7 +1177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1829553004}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &221583870
 MonoBehaviour:
@@ -1890,6 +1899,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4561451306695836, guid: 63f52685b1f2fab498745a15377a2b35, type: 3}
   m_PrefabInstance: {fileID: 306260962}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &308978951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 308978952}
+  - component: {fileID: 308978953}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &308978952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308978951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1829553004}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308978953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308978951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10bee6112c5a31848b975ab591e83590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &312835723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2744,6 +2797,9 @@ MonoBehaviour:
   Sound: {fileID: 1799502051}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &553460354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,6 +3248,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &663978190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,6 +3346,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 993840595}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &742392456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3723,6 +3785,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &860846893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4201,6 +4266,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &971848388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5265,6 +5333,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 60339384}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1371211705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5590,6 +5661,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1440028352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,6 +6117,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1506303478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6524,6 +6601,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1548868695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6844,7 +6924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1829553004}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1563853672
 MonoBehaviour:
@@ -7291,6 +7371,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1734263462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7624,6 +7707,9 @@ MonoBehaviour:
   Sound: {fileID: 1799502051}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1799502054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7746,6 +7832,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 308978952}
   - {fileID: 221583869}
   - {fileID: 1563853671}
   m_Father: {fileID: 0}
@@ -7806,6 +7893,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1853576804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8036,6 +8126,9 @@ MonoBehaviour:
   Sound: {fileID: 0}
   Music: {fileID: 0}
   SrStart: {fileID: 0}
+  Weapon: {fileID: 0}
+  canvasImage: {fileID: 0}
+  spriteArray: []
 --- !u!114 &1862881920
 MonoBehaviour:
   m_ObjectHideFlags: 0
