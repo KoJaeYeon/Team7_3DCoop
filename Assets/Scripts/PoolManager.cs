@@ -9,17 +9,21 @@ public class PoolManager : Singleton<PoolManager>
     public GameObject[] bulletPrefab; //0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star
     public GameObject enemyPrefab;
     public GameObject itemBoxPrefab;
+    public GameObject particlePrefab;
 
     [Header("0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star")]
     public Transform[] bulletTrans; //0.Bullet, 1.Rocket, 2.Rifle, 3.Arrow, 4.Star
     public Transform enemyTrans;
     public Transform itemBoxTrans;
+    public Transform particleTrans;
 
     private int itemBoxCount = 30;
 
     Queue<GameObject>[] bulletPools;
     Queue<GameObject> enemyPools = new Queue<GameObject>();
     List<GameObject> itemBoxPools = new List<GameObject>();
+
+    Queue<GameObject> particlePools = new Queue<GameObject>(); 
 
     #endregion
 
@@ -88,6 +92,13 @@ public class PoolManager : Singleton<PoolManager>
             prefab.SetActive(false);
             itemBoxPools.Add(prefab);
         }
+
+        for (int i = 0; i < itemBoxCount; i++) //Particle
+        {
+            GameObject prefab = Instantiate(particlePrefab, particleTrans);
+            prefab.SetActive(false);
+            particlePools.Enqueue(prefab);
+        }
     }
     public GameObject GetBullet()
     {
@@ -141,12 +152,20 @@ public class PoolManager : Singleton<PoolManager>
             if (!itemBoxPools[i].activeSelf)
             {
                 itemBox = itemBoxPools[i];
-                itemBox.SetActive(false);
+                itemBox.SetActive(true);
                 return itemBox;
             }
         }
         GameObject prefab = Instantiate(itemBoxPrefab, itemBoxTrans);
         itemBoxPools.Add(prefab);
         return prefab;
+    }
+
+    public GameObject GetPartivle()
+    {
+        GameObject particle = particlePools.Dequeue();
+        particlePools.Enqueue(particle);
+        particle.SetActive(true);
+        return particle;
     }
 }
