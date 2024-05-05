@@ -79,6 +79,7 @@ public class Item : MonoBehaviour,IHitAble
             else if (isPowerUp)
             {
                 //파워업 처리
+                WeaponManager.Instance.PowerUP();
                 isPowerUp = false;  
             }
             else
@@ -102,48 +103,6 @@ public class Item : MonoBehaviour,IHitAble
         ReturnBox();
     }
 
-    private void PowerUp()
-    {
-
-    }
-
-    private void AddPlayer()
-    {
-
-    }
-
-
-    //public WeaponType DropWeapon()
-    //{
-    //    int RandomSelect = Random.Range(1, 7);
-
-    //    switch(RandomSelect)
-    //    {
-    //        case 1:
-    //            weaponType = WeaponType.Revolver;
-    //            break;
-    //        case 2:
-    //            weaponType = WeaponType.MachineGun;
-    //            break;
-    //        case 3:
-    //            weaponType = WeaponType.RocketLauncher;
-    //            break;
-    //        case 4:
-    //            weaponType = WeaponType.SMG;
-    //            break;
-    //        case 5:
-    //            weaponType = WeaponType.Rifle;
-    //            break;
-    //        case 6:
-    //            weaponType = WeaponType.Bow;
-    //            break;
-    //        case 7:
-    //            weaponType = WeaponType.ThrowingStars;
-    //            break;
-    //    }
-
-    //    return weaponType;
-    //}
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))

@@ -108,6 +108,8 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody.useGravity = false;
         EnemyCollider.enabled = false;
 
+
+
         yield return new WaitForSeconds(1.5f);
 
         ReturnEnemy();
