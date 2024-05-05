@@ -33,6 +33,7 @@ public class Item : MonoBehaviour, IHitAble
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
+        BoxImage = transform.GetComponentInChildren<Image>();
     }
 
     private void InitBox()
@@ -70,16 +71,20 @@ public class Item : MonoBehaviour, IHitAble
         {
             for(int i = 0; i < WeaponSprite.Length; i++)
             {
-
+                if (WeaponSprite[i].name == weapon.ToString())
+                {
+                    BoxImage.sprite = WeaponSprite[i];
+                    return;
+                }
             }
         }
-        else if(isPowerUp)
+        else if (isPowerUp)
         {
-            
+            BoxImage.sprite = ItemSprite[1];
         }
         else if(isPlayer)
         {
-
+            BoxImage.sprite = ItemSprite[0];
         }
     }
 
