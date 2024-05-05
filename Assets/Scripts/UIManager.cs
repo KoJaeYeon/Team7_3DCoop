@@ -42,6 +42,8 @@ public class UIManager : MonoBehaviour
 
         StartCoroutine(TimeCount(time));
 
+        setting.SetActive(false);
+
     }
 
 
