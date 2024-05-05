@@ -94,7 +94,7 @@ public class Item : MonoBehaviour, IHitAble
             else
             {
                 //플레이어 증가
-                //PlayerManager.Instance.PlayerPlus();
+                PlayerManager.Instance.PlayerPlus();
             }
 
             Explosion();

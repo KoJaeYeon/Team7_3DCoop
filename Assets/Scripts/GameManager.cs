@@ -53,4 +53,10 @@ public class GameManager : Singleton<GameManager>
     {
         return gameLevel;
     }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        Debug.Log("게임종료");
+    }
 }
