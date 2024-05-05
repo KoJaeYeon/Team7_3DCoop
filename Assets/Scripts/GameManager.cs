@@ -44,7 +44,13 @@ public class GameManager : Singleton<GameManager>
     {
         gameLevel += 1;
         scoreMultiplier += 0.1f;
+        SpawnManager.Instance.UpdateLevel(gameLevel);
 
         Debug.Log($"{gameLevel}, {scoreMultiplier}");
+    }
+
+    public int GetGameLevel()
+    {
+        return gameLevel;
     }
 }

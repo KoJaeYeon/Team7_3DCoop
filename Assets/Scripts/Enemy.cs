@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, IHitAble
 {
-    public float EnemyHp;
-    public float EnemySpeed;
-    public float EnemyMaxSpeed;
-    public float TargetDistance;
-    public int EnemyAtk;
+    private float EnemyHp;
+    private float EnemySpeed = 8.0f;
+    private float EnemyMaxSpeed = 4.0f;
+    private float TargetDistance = 10.0f;
+    private int EnemyAtk = 10;
 
     private bool isMove = true;
 
@@ -29,16 +29,18 @@ public class Enemy : MonoBehaviour, IHitAble
         EnemyRigidbody = GetComponent<Rigidbody>();
         EnemyAnimator = GetComponent<Animator>();
         EnemyCollider = GetComponent<CapsuleCollider>();
-
-        MovePos = transform.forward;
-        EnemyAnimator.SetFloat("Run", 1f);
-
-        
     }
 
     private void OnEnable()
     {
         isMove = true;
+        MovePos = transform.forward;
+        EnemyAnimator.SetFloat("Run", 1f);
+    }
+
+    public void SetHp(float Hp)
+    {
+        EnemyHp = Hp;   
     }
 
 
@@ -83,21 +85,10 @@ public class Enemy : MonoBehaviour, IHitAble
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            EnemyAnimator.SetBool("Attack", true);
-            EnemyAnimator.SetFloat("Run", 0f);
+            ReturnEnemy();
         } 
        
     }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            EnemyAnimator.SetBool("Attack", false);
-            EnemyAnimator.SetFloat("Run", 1f);
-        }
-    }
-
     public void Damaged(float damage)
     {
         EnemyHp -= damage;
