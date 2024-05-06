@@ -15,6 +15,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject Sound;
     public GameObject Music;
     public GameObject restart;
+    public GameObject defeat;
     public Animator potionAin;
 
     [Header("Weaponimage")]
@@ -82,9 +83,9 @@ public class UIManager : Singleton<UIManager>
     //다시시작버튼
     public void ReTurnButton()
     {
-        SceneManager.LoadScene("MainGame");
         restart.SetActive(false);
         Time.timeScale = 1;
+        SceneManager.LoadScene("MainGame");
 
     }
 
@@ -128,6 +129,11 @@ public class UIManager : Singleton<UIManager>
         slider2.value = 1;
     }
 
+    public void Defeat()
+    {
+        defeat.SetActive(true);
+    }
+
 
     IEnumerator TimeCount(float time)
     {
@@ -152,7 +158,6 @@ public class UIManager : Singleton<UIManager>
 
     public void Score(int score)
     {
-
         scoretext.text = "Score : " + score;
     }
 

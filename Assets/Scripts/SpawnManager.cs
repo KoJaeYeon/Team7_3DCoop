@@ -4,7 +4,6 @@ using UnityEngine;
 public class SpawnManager : Singleton<SpawnManager>
 {
     public Transform[] itemSpawnTrans = new Transform[3];
-    public Transform playerTrans;
 
     public float itemSpawnTimer = 5f;
     public float enemySpawnTimer = 1f;
@@ -97,7 +96,6 @@ public class SpawnManager : Singleton<SpawnManager>
         prefab.transform.position = itemSpawnTrans[1].position + Vector3.right * Random.Range(-4,4);
         prefab.transform.eulerAngles = new Vector3(0,-180,0);
         Enemy enemy = prefab.GetComponent<Enemy>();
-        enemy.PlayerPos = playerTrans.position;
         enemy.SetHp(enemyHelath);
     }
 
