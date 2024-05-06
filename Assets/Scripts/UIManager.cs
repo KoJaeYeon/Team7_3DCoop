@@ -8,8 +8,6 @@ using Unity.Profiling.Editor;
 
 public class UIManager : Singleton<UIManager>
 {
-
-
     [Header("Gameobject")]
     public GameObject setting;
     public GameObject Sound;
@@ -39,8 +37,6 @@ public class UIManager : Singleton<UIManager>
     private int minute;
     private int second;
     private bool isTime = false;
-
-
 
     private void Awake()
     {
@@ -86,7 +82,6 @@ public class UIManager : Singleton<UIManager>
         restart.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainGame");
-
     }
 
     //메인이동 버튼
@@ -148,12 +143,8 @@ public class UIManager : Singleton<UIManager>
             second = (int)(time % 60);
             timetext.text = "Time : " + hour.ToString("00") + " : " + minute.ToString("00") + " : " + second.ToString("00");
            
-
             yield return null;
-
         }
-
-
     }
 
     public void Score(int score)
@@ -175,6 +166,4 @@ public class UIManager : Singleton<UIManager>
     {
         potionAin.enabled = false;
     }
-
-
 }

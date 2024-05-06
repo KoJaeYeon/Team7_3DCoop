@@ -92,9 +92,7 @@ public class Enemy : MonoBehaviour, IHitAble
             PlayerManager.Instance.PlayerMinus();
             ReturnEnemy();
         }
-
     }
-
 
     private void Score()
     {        
