@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
-using Unity.Profiling.Editor;
 
 
 public class UIManager : Singleton<UIManager>

@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour, IHitAble
     private Vector3 TargetPos;
 
     public Vector3 PlayerPos;
+    
 
     private void Awake()
     {

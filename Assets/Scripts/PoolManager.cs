@@ -145,7 +145,6 @@ public class PoolManager : Singleton<PoolManager>
 
     public GameObject GetItemBox()
     {
-
         GameObject itemBox;
         for (int i = 0; i < itemBoxCount; i++)
         {
