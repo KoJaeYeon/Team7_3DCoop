@@ -37,7 +37,7 @@ public class WeaponManager : Singleton<WeaponManager>
     public void PowerUP()
     {
         Debug.Log("PowerUp");
-        damageMultiplier += 0.1f;
+        damageMultiplier += 0.05f;
         powerUpInt++;
         UIManager.Instance.PworeUpUi(powerUpInt);
 

@@ -28,6 +28,7 @@ public class Item : MonoBehaviour, IHitAble
     {
         InitBox();
         StartCoroutine(ReturnTimer());
+        boxCollider.enabled = true;
     }
 
     private void Awake()
