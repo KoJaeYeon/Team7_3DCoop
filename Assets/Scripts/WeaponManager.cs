@@ -10,7 +10,6 @@ public class WeaponManager : Singleton<WeaponManager>
     public float damageMultiplier = 1f;
     public int powerUpInt = 0;
 
-
     Dictionary<WeaponType, WeaponData> weaponDataDic;
 
     private void Awake()
