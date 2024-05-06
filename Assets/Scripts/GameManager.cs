@@ -58,10 +58,12 @@ public class GameManager : Singleton<GameManager>
     {
         Time.timeScale = 0f;
         Debug.Log("게임종료");
+        UIManager.Instance.Defeat();
     }
 
     public void ScoreUp()
     {
         score += gameLevel * scoreMultiplier;
+        UIManager.Instance.Score((int)score);
     }
 }
