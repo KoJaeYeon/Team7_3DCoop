@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class GameManager : Singleton<GameManager>
 {
     private float currentTime = 0f;
-    private float timerDuration = 10;
+    private float timerDuration = 1;
     private int gameLevel = 1;
     public static float score = 0;
     public static float scoreMultiplier = 1f;
@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>
         gameLevel += 1;
         scoreMultiplier += 0.1f;
         SpawnManager.Instance.UpdateLevel(gameLevel);
+        UIManager.Instance.LevelUP();
 
         Debug.Log($"{gameLevel}, {scoreMultiplier}");
     }

@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject restart;
     public GameObject defeat;
     public Animator potionAin;
+    public Animator powerUPT;
 
     [Header("Weaponimage")]
     private int weapon;
@@ -56,7 +57,7 @@ public class UIManager : Singleton<UIManager>
 
         setting.SetActive(false);
 
-        potionAin.enabled = false;
+        
 
     }
 
@@ -165,16 +166,17 @@ public class UIManager : Singleton<UIManager>
     {
 
         poweruptext.text = Pcount.ToString();
-        potionAin.enabled = true;
-
-        Invoke("Power", 1f);
+        potionAin.SetTrigger("Potion");
+        
 
     }
 
-    public void Power()
-    {
-        potionAin.enabled = false;
+    public void LevelUP()
+    { 
+       powerUPT.SetTrigger("level");
+    
     }
 
+   
 
 }
