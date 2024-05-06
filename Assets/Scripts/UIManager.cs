@@ -162,7 +162,7 @@ public class UIManager : Singleton<UIManager>
         poweruptext.text = Pcount.ToString();
         potionAin.enabled = true;
 
-        Invoke("Power", 0.6f);
+        Invoke("Power", 1f);
 
     }
 
