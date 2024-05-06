@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class UIButton : MonoBehaviour
 {
-    public Camera camera;
-
     //시작버튼
     public void StartButton()
     {
