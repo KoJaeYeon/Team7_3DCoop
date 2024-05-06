@@ -330,12 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99efd1e94481474fb47565dcb7ed01e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHp: 3
-  EnemySpeed: 8
-  EnemyMaxSpeed: 4
-  TargetDistance: 10
-  EnemyAtk: 10
-  PlayerTransform: {fileID: 0}
+  PlayerPos: {x: 0, y: 0, z: 0}
+  targetTrans: {fileID: 0}
 --- !u!1 &1109665426179172
 GameObject:
   m_ObjectHideFlags: 0
