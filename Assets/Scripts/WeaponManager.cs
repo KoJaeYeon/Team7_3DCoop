@@ -39,6 +39,8 @@ public class WeaponManager : Singleton<WeaponManager>
         Debug.Log("PowerUp");
         damageMultiplier += 0.05f;
         powerUpInt++;
+        UIManager.Instance.PworeUpUi(powerUpInt);
+
     }
 
     public void SetWeapon(WeaponType weaponType)
@@ -49,6 +51,7 @@ public class WeaponManager : Singleton<WeaponManager>
         {
             playerWeapons[i].SetWeapon(weaponType);
         }
+        UIManager.Instance.SetWeapon(weaponType);
     }
 
     public WeaponData GetWeaponData(WeaponType weaponType)

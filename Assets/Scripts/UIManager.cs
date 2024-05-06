@@ -3,15 +3,19 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
+using Unity.Profiling.Editor;
 
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
+
+
     [Header("Gameobject")]
     public GameObject setting;
     public GameObject Sound;
     public GameObject Music;
-    public GameObject SrStart;
+    public GameObject restart;
+    public Animator potionAin;
 
     [Header("Weaponimage")]
     private int weapon;
@@ -25,6 +29,8 @@ public class UIManager : MonoBehaviour
     [Header("Text")]
     public TMP_Text timetext;
     public TMP_Text scoretext;
+    public TMP_Text poweruptext;
+    
 
     [Header("Time")]
     private float time = 0;
@@ -49,38 +55,21 @@ public class UIManager : MonoBehaviour
 
         setting.SetActive(false);
 
+        potionAin.enabled = false;
+
     }
 
     
-
-    void Update()
+    public void SetWeapon(WeaponType weapontype)
     {
-        
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            Debug.Log("키");
-            SetWeapon();
-        }
-      
+        canvasImage.sprite = spriteArray[(int)weapontype]; // 현재 스프라이트로 이미지 변경
     }
-
-
-    public void SetWeapon()
-    {
-        Debug.Log(weapon);
-        Debug.Log("spriteArray.Length : " + spriteArray.Length);
-       
-        weapon = (weapon + 1) % spriteArray.Length; // 다음 스프라이트 인덱스 계산
-        canvasImage.sprite = spriteArray[weapon]; // 현재 스프라이트로 이미지 변경
-        
-    }
-
 
 
     //시작버튼
     public void StartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainGame");
     }
 
     //세팅버튼
@@ -93,8 +82,8 @@ public class UIManager : MonoBehaviour
     //다시시작버튼
     public void ReTurnButton()
     {
-        SceneManager.LoadScene("SampleScene");
-        SrStart.SetActive(false);
+        SceneManager.LoadScene("MainGame");
+        restart.SetActive(false);
         Time.timeScale = 1;
 
     }
@@ -139,7 +128,6 @@ public class UIManager : MonoBehaviour
         slider2.value = 1;
     }
 
-    
 
     IEnumerator TimeCount(float time)
     {
@@ -166,6 +154,21 @@ public class UIManager : MonoBehaviour
     {
 
         scoretext.text = "Score : " + score;
+    }
+
+    public void PworeUpUi(int Pcount)
+    {
+
+        poweruptext.text = Pcount.ToString();
+        potionAin.enabled = true;
+
+        Invoke("Power", 0.6f);
+
+    }
+
+    public void Power()
+    {
+        potionAin.enabled = false;
     }
 
 
