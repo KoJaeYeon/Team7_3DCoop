@@ -73,6 +73,7 @@ public class MyWeapon : MonoBehaviour
     private void Update()
     {
         weapon.Fire();
+
         if(Input.GetKeyUp(KeyCode.F1))
         {
             SetWeapon(WeaponType.MachineGun);

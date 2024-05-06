@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class UIButton : MonoBehaviour
 {
     //시작버튼
+
+
     public void StartButton()
     {
         Debug.Log("dsf");
