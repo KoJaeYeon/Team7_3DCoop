@@ -98,7 +98,7 @@ public class Item : MonoBehaviour, IHitAble
     {
         if (isMove)
         {
-            Vector3 Move = Vector3.back * BoxSpeed * Time.deltaTime;
+            Vector3 Move = Vector3.back * BoxSpeed * Time.fixedDeltaTime;
             transform.Translate(Move);
         }
     }
