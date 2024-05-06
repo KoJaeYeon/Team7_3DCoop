@@ -99,6 +99,6 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public Vector3 GetPlayerPos()
     {
-        return transform.position;
+        return transform.GetChild(0).position;
     }
 }
