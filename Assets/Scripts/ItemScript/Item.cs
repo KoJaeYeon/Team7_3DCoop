@@ -132,6 +132,7 @@ public class Item : MonoBehaviour, IHitAble
                 PlayerManager.Instance.PlayerPlus();
             }
 
+            GameManager.Instance.ScoreUp();
             Explosion();
             StartCoroutine(ActiveText());
         }

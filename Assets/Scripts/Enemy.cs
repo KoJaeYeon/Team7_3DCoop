@@ -98,9 +98,8 @@ public class Enemy : MonoBehaviour, IHitAble
 
 
     private void Score()
-    {
-        EnemyScore = GameManager.Instance.GetGameLevel() * 10;
-        //GameManager.Instance.ScoreUp(EnemyScore);
+    {        
+        GameManager.Instance.ScoreUp();
     }
 
 
