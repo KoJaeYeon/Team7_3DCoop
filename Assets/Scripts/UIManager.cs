@@ -17,6 +17,7 @@ public class UIManager : Singleton<UIManager>
     public GameObject defeat;
     public Animator potionAin;
     public Animator powerUPT;
+   
 
     [Header("Weaponimage")]
     private int weapon;
@@ -56,7 +57,7 @@ public class UIManager : Singleton<UIManager>
 
         setting.SetActive(false);
 
-        
+       
 
     }
 

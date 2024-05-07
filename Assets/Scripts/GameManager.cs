@@ -27,11 +27,13 @@ public class GameManager : Singleton<GameManager>
         {
             yield return new WaitForSeconds(timerDuration);
             UpdateGameProgressSpeed();
+            
         }
     }   
     
     private void InitGame()
     {
+        SoundManager.Instance.PlayBGM();
         gameLevel = 1;
         scoreMultiplier = 1f;
         score = 0;
@@ -44,7 +46,7 @@ public class GameManager : Singleton<GameManager>
         gameLevel += 1;
         scoreMultiplier += 0.1f;
         SpawnManager.Instance.UpdateLevel(gameLevel);
-
+        UIManager.Instance.LevelUP();
         Debug.Log($"{gameLevel}, {scoreMultiplier}");
     }
 
@@ -55,6 +57,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0f;
         Debug.Log("게임종료");
         UIManager.Instance.Defeat();
