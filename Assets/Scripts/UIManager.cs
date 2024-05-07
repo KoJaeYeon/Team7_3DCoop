@@ -61,6 +61,15 @@ public class UIManager : Singleton<UIManager>
         soundSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
 
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+            OnVolumeChanged(PlayerPrefs.GetFloat("Volume"));
+            soundSlider.value = PlayerPrefs.GetFloat("Volume");
+        }
+    }
+
 
     public void SetWeapon(WeaponType weapontype)
     {
@@ -117,8 +126,15 @@ public class UIManager : Singleton<UIManager>
     public void Defeat()
     {
         defeat.SetActive(true);
+        Time.timeScale = 0;
     }
 
+    public void ResumeButton()
+    {
+        defeat.SetActive(false);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainGame");
+    }
 
     IEnumerator TimeCount(float time)
     {
@@ -161,12 +177,19 @@ public class UIManager : Singleton<UIManager>
 
     void OnVolumeChanged(float volume)
     {
+        PlayerPrefs.SetFloat("Volume", volume);
+
         if (volume > 0)
         {
             Sound.GetComponent<Image>().sprite = volumeOnImage;
         }
+        else
+        {
+            Sound.GetComponent<Image>().sprite = volumeOffImage;
+        }
 
         SoundManager.Instance.GetBgm().volume = volume;
+
     }
 }
 
