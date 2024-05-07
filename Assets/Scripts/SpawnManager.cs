@@ -87,7 +87,7 @@ public class SpawnManager : Singleton<SpawnManager>
         enemyHelath += 1f;
         enemyHelath *= 1.2f;
         gameLevel = level;
-        UIManager.Instance.LevelUP();
+       
     }
 
     public void SpawnEnemyPoint()
