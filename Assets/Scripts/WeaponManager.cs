@@ -22,10 +22,10 @@ public class WeaponManager : Singleton<WeaponManager>
 
         weaponDataDic.Add(WeaponType.Revolver, new WeaponData(0.3f, 10f, 1f, 1, 0, false));
         weaponDataDic.Add(WeaponType.MachineGun, new WeaponData(0.05f, 30f, 2f, 1, 0, false));
-        weaponDataDic.Add(WeaponType.RocketLauncher, new WeaponData(3f, 5f, 40f, 1, 2.5f, true));
+        weaponDataDic.Add(WeaponType.RocketLauncher, new WeaponData(3f, 5f, 40f, 1, 3.5f, true));
         weaponDataDic.Add(WeaponType.SMG, new WeaponData(0.2f, 15f, 1f, 1, 0, false));
         weaponDataDic.Add(WeaponType.Rifle, new WeaponData(2f, 100f, 100f, 50, 0, false));
-        weaponDataDic.Add(WeaponType.Bow, new WeaponData(1f, 10f, 30f, 2, 0, false));
+        weaponDataDic.Add(WeaponType.Bow, new WeaponData(1.5f, 10f, 20f, 2, 0, false));
         weaponDataDic.Add(WeaponType.ThrowingStars, new WeaponData(0.7f, 10f, 1f, 3, 0, false));
 
 
