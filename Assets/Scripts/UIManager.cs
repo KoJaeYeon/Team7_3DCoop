@@ -25,8 +25,8 @@ public class UIManager : Singleton<UIManager>
     public Sprite[] spriteArray;
 
     [Header("Slider")]
-    Slider slider1;
-    Slider slider2;
+    public  Slider slider1;
+ 
 
     [Header("Text")]
     public TMP_Text timetext;
@@ -56,8 +56,6 @@ public class UIManager : Singleton<UIManager>
         Debug.Log("start : " + weapon);
 
         setting.SetActive(false);
-
-       
 
     }
 
@@ -111,24 +109,13 @@ public class UIManager : Singleton<UIManager>
        Sound.SetActive(true);
         slider1.value = 0;
     }
+
     public void SoundO()
     {
         Sound.SetActive(false);
         slider1.value = 1;
     }
 
-    //À½¾Ç¹öÆ°
-    public void MusicX()
-    {
-        Music.SetActive(true);
-        slider2.value = 0;
-
-    }
-    public void MusicO()
-    {
-        Music.SetActive(false);
-        slider2.value = 1;
-    }
 
     public void Defeat()
     {
