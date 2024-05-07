@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class UIButton : MonoBehaviour
 {
+
+    public GameObject startTani;
+    private void Start()
+    {
+        startTani.SetActive(true);
+    }
+
+
+
     //시작버튼
 
 

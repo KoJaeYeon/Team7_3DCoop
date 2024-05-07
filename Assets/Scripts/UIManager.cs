@@ -7,24 +7,26 @@ using TMPro;
 
 public class UIManager : Singleton<UIManager>
 {
+
+
     [Header("Gameobject")]
     public GameObject setting;
     public GameObject Sound;
+    public GameObject Music;
     public GameObject restart;
     public GameObject defeat;
     public Animator potionAin;
+    public Animator powerUPT;
+   
 
     [Header("Weaponimage")]
     private int weapon;
     public Image canvasImage;
     public Sprite[] spriteArray;
 
-    [Header("Sound")]
-    public Slider soundSlider;
-    public Sprite volumeOnImage;
-    public Sprite volumeOffImage;
-    private float volumeSize;
-    
+    [Header("Slider")]
+    Slider slider1;
+    Slider slider2;
 
     [Header("Text")]
     public TMP_Text timetext;
@@ -38,6 +40,8 @@ public class UIManager : Singleton<UIManager>
     private int minute;
     private int second;
     private bool isTime = false;
+
+
 
     private void Awake()
     {
@@ -53,15 +57,11 @@ public class UIManager : Singleton<UIManager>
 
         setting.SetActive(false);
 
-        potionAin.enabled = false;
+       
+
     }
 
-    private void OnEnable()
-    {
-        soundSlider.onValueChanged.AddListener(OnVolumeChanged);
-    }
-
-
+    
     public void SetWeapon(WeaponType weapontype)
     {
         canvasImage.sprite = spriteArray[(int)weapontype]; // 현재 스프라이트로 이미지 변경
@@ -87,6 +87,7 @@ public class UIManager : Singleton<UIManager>
         restart.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainGame");
+
     }
 
     //메인이동 버튼
@@ -104,13 +105,29 @@ public class UIManager : Singleton<UIManager>
         Time.timeScale = 1;
     }
 
-    public void SoundMuteButton()
+    //소리 버튼
+    public void SoundX()
+    { 
+       Sound.SetActive(true);
+        slider1.value = 0;
+    }
+    public void SoundO()
     {
-        if(Sound.GetComponent<Image>().sprite == volumeOnImage)
-        {
-            Sound.GetComponent<Image>().sprite = volumeOffImage;
-            soundSlider.value = 0;
-        }
+        Sound.SetActive(false);
+        slider1.value = 1;
+    }
+
+    //음악버튼
+    public void MusicX()
+    {
+        Music.SetActive(true);
+        slider2.value = 0;
+
+    }
+    public void MusicO()
+    {
+        Music.SetActive(false);
+        slider2.value = 1;
     }
 
     public void Defeat()
@@ -132,8 +149,12 @@ public class UIManager : Singleton<UIManager>
             second = (int)(time % 60);
             timetext.text = "Time : " + hour.ToString("00") + " : " + minute.ToString("00") + " : " + second.ToString("00");
            
+
             yield return null;
+
         }
+
+
     }
 
     public void Score(int score)
@@ -145,24 +166,17 @@ public class UIManager : Singleton<UIManager>
     {
 
         poweruptext.text = Pcount.ToString();
-        potionAin.enabled = true;
-
-        Invoke("Power", 0.6f);
+        potionAin.SetTrigger("Potion");
+        
 
     }
 
-    public void Power()
-    {
-        potionAin.enabled = false;
+    public void LevelUP()
+    { 
+       powerUPT.SetTrigger("level");
+    
     }
 
-    void OnVolumeChanged(float volume)
-    {
-        if(volume > 0)
-        {
-            Sound.GetComponent<Image>().sprite = volumeOnImage;
-        }
+   
 
-        SoundManager.Instance.GetBgm().volume = volume;
-    }
 }
