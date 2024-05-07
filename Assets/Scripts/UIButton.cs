@@ -22,4 +22,16 @@ public class UIButton : MonoBehaviour
         Debug.Log("dsf");
         SceneLoadManager.Instance.StartButton();
     }
+
+
+    public void QuitButton()
+    { 
+          
+
+
+        Application.Quit();
+    
+    }
+
+
 }

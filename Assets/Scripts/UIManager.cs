@@ -7,12 +7,9 @@ using TMPro;
 
 public class UIManager : Singleton<UIManager>
 {
-
-
     [Header("Gameobject")]
     public GameObject setting;
     public GameObject Sound;
-    public GameObject Music;
     public GameObject restart;
     public GameObject defeat;
     public Animator potionAin;
@@ -24,9 +21,10 @@ public class UIManager : Singleton<UIManager>
     public Image canvasImage;
     public Sprite[] spriteArray;
 
-    [Header("Slider")]
-    Slider slider1;
-    Slider slider2;
+    [Header("Sound")]
+    public Slider soundSlider;
+    public Sprite volumeOnImage;
+    public Sprite volumeOffImage;
 
     [Header("Text")]
     public TMP_Text timetext;
@@ -56,12 +54,23 @@ public class UIManager : Singleton<UIManager>
         Debug.Log("start : " + weapon);
 
         setting.SetActive(false);
-
-       
-
     }
 
-    
+    private void OnEnable()
+    {
+        soundSlider.onValueChanged.AddListener(OnVolumeChanged);
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("Volume"))
+        {
+            OnVolumeChanged(PlayerPrefs.GetFloat("Volume"));
+            soundSlider.value = PlayerPrefs.GetFloat("Volume");
+        }
+    }
+
+
     public void SetWeapon(WeaponType weapontype)
     {
         canvasImage.sprite = spriteArray[(int)weapontype]; // 현재 스프라이트로 이미지 변경
@@ -71,6 +80,7 @@ public class UIManager : Singleton<UIManager>
     //시작버튼
     public void StartButton()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainGame");
     }
 
@@ -86,8 +96,6 @@ public class UIManager : Singleton<UIManager>
     {
         restart.SetActive(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene("MainGame");
-
     }
 
     //메인이동 버튼
@@ -106,35 +114,27 @@ public class UIManager : Singleton<UIManager>
     }
 
     //소리 버튼
-    public void SoundX()
-    { 
-       Sound.SetActive(true);
-        slider1.value = 0;
-    }
-    public void SoundO()
+    public void SoundMuteButton()
     {
-        Sound.SetActive(false);
-        slider1.value = 1;
-    }
-
-    //음악버튼
-    public void MusicX()
-    {
-        Music.SetActive(true);
-        slider2.value = 0;
-
-    }
-    public void MusicO()
-    {
-        Music.SetActive(false);
-        slider2.value = 1;
+        if (Sound.GetComponent<Image>().sprite == volumeOnImage)
+        {
+            Sound.GetComponent<Image>().sprite = volumeOffImage;
+            soundSlider.value = 0;
+        }
     }
 
     public void Defeat()
     {
         defeat.SetActive(true);
+        Time.timeScale = 0;
     }
 
+    public void ResumeButton()
+    {
+        defeat.SetActive(false);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainGame");
+    }
 
     IEnumerator TimeCount(float time)
     {
@@ -153,8 +153,6 @@ public class UIManager : Singleton<UIManager>
             yield return null;
 
         }
-
-
     }
 
     public void Score(int score)
@@ -177,6 +175,21 @@ public class UIManager : Singleton<UIManager>
     
     }
 
-   
+    void OnVolumeChanged(float volume)
+    {
+        PlayerPrefs.SetFloat("Volume", volume);
 
+        if (volume > 0)
+        {
+            Sound.GetComponent<Image>().sprite = volumeOnImage;
+        }
+        else
+        {
+            Sound.GetComponent<Image>().sprite = volumeOffImage;
+        }
+
+        SoundManager.Instance.GetBgm().volume = volume;
+
+    }
 }
+
