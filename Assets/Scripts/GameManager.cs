@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class GameManager : Singleton<GameManager>
 {
-    private float timerDuration = 10;
+    private float timerDuration = 60;
     private int gameLevel = 1;
     public static float score = 0;
     public static float scoreMultiplier = 1f;
@@ -32,6 +32,7 @@ public class GameManager : Singleton<GameManager>
     
     private void InitGame()
     {
+        SoundManager.Instance.PlayBGM();
         gameLevel = 1;
         scoreMultiplier = 1f;
         score = 0;
@@ -55,6 +56,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GameOver()
     {
+        SoundManager.Instance.StopBGM();
         Time.timeScale = 0f;
         Debug.Log("게임종료");
         UIManager.Instance.Defeat();
